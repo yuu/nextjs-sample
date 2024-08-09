@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@cloudscape-design/components": "^3.0.709",
+    "@cloudscape-design/global-styles": "^1.0.32",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18"
