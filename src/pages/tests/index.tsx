@@ -4,13 +4,12 @@ import { UserTable, usePreferences, useUserTableAction } from "@/features/test";
 
 const TestsPage: NextPage = () => {
   const preferences = usePreferences();
-  const { data: result, isLoading } = trpc.tests.useQuery({
-    page: preferences.currentPageIndex,
-    limit: preferences.preferences.pageSize ?? 20,
-  });
-  const pagesCount = result?.pagesCount ?? 0;
-  const totalItemCount = result?.totalItemCount ?? 0;
-  const items = result?.items ?? [];
+  const { data = { items: [], pagesCount: 0, totalItemCount: 0 }, isLoading } =
+    trpc.tests.useQuery({
+      page: preferences.currentPageIndex,
+      limit: preferences.preferences.pageSize ?? 20,
+    });
+  const { items, pagesCount, totalItemCount } = data;
 
   const { handleItemClick } = useUserTableAction(items);
 
