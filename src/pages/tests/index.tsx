@@ -1,32 +1,27 @@
 import type { NextPage } from "next";
 import { trpc } from "@/api";
-import {
-  UserTable,
-  usePreferences,
-  useFetchUsers,
-  useUserTableAction,
-} from "@/features/test";
+import { UserTable, usePreferences, useUserTableAction } from "@/features/test";
 
 const TestsPage: NextPage = () => {
   const preferences = usePreferences();
-
-  const hello = trpc.hello.useQuery({
-    text: "world",
-  });
-  console.log(hello.data);
-
-  const { data, isLoading } = useFetchUsers({
-    sortingColumn: preferences.sortingColumn,
+  const { data: result, isLoading } = trpc.tests.useQuery({
     page: preferences.currentPageIndex,
-    pageSize: preferences.preferences.pageSize ?? 20,
+    limit: preferences.preferences.pageSize ?? 20,
   });
-  const { handleItemClick } = useUserTableAction(data?.items ?? []);
+  const pagesCount = result?.pagesCount ?? 0;
+  const items =
+    result?.items?.map((row) => ({
+      ...row,
+      createdAt: new Date(row.createdAt),
+    })) ?? [];
+
+  const { handleItemClick } = useUserTableAction(items);
 
   return (
     <UserTable
       allPreferences={preferences}
-      items={data?.items ?? []}
-      pagesCount={data?.pagesCount ?? 0}
+      items={items}
+      pagesCount={pagesCount}
       isLoading={isLoading}
       onItemClick={handleItemClick}
     />

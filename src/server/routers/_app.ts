@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { procedure, router } from "@/server/trpc";
+import tests from "./tests";
 
 const hello = procedure
   .input(
@@ -15,6 +16,7 @@ const hello = procedure
 
 export const appRouter = router({
   hello,
+  tests,
 });
 
 export type AppRouter = typeof appRouter;
