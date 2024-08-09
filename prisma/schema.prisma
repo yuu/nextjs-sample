@@ -14,17 +14,17 @@ datasource db {
 }
 
 model Test {
-    id Int @id @default(autoincrement())
-    family_name String
-    first_name String
-    tel String?
-    email String
-    postal_code String
-    prefecture String
-    city String
-    street_address String
-    building String
-    created_at DateTime?
+  id            Int       @id @default(autoincrement())
+  familyName    String    @map("family_name")
+  firstName     String    @map("first_name")
+  tel           String?
+  email         String
+  postalCode    String    @map("postal_code")
+  prefecture    String
+  city          String
+  streetAddress String    @map("street_address")
+  building      String
+  createdAt     DateTime? @map("created_at")
 
-    @@map("tests")
+  @@map("tests")
 }
