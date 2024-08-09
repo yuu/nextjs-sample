@@ -7,7 +7,7 @@ type Address = {
 };
 
 export type Test = {
-  id: string;
+  id: number;
   familyName: string;
   firstName: string;
   tel: string | null;
