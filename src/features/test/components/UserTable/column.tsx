@@ -27,7 +27,7 @@ export const columnDefinitions: TableProps<User>["columnDefinitions"] = [
     header: "氏名",
     width: 160,
     cell: (item) => (
-      <Link href={`/user/${item.id}`}>
+      <Link href={`/tests/${item.id}`}>
         {item.familyName + " " + item.firstName}
       </Link>
     ),
