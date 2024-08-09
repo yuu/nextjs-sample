@@ -4,13 +4,13 @@ import {
   CollectionPreferences,
   type ButtonDropdownProps,
 } from "@cloudscape-design/components";
-import { type UserWithPlanCustomer } from "src/model";
+import { type Test } from "@/model/test";
 import { UserTableHeader } from "./UserTableHeader";
 import { Empty } from "./Empty";
 import { usePreferences } from "./usePreferences";
 
 type UserTableProps = {
-  items: Array<UserWithPlanCustomer>;
+  items: Array<Test>;
   pagesCount: number;
   totalItemCount: number;
   isLoading: boolean;
