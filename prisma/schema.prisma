@@ -12,3 +12,19 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Test {
+    id Int @id @default(autoincrement())
+    family_name String
+    first_name String
+    tel String?
+    email String
+    postal_code String
+    prefecture String
+    city String
+    street_address String
+    building String
+    created_at DateTime?
+
+    @@map("tests")
+}
