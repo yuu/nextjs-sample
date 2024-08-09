@@ -1,7 +1,5 @@
 import type { AppProps } from "next/app";
-import { QueryClient, QueryClientProvider } from "react-query";
 import { trpc } from "@/api";
-
 import { AppLayout } from "@cloudscape-design/components";
 import { I18nProvider } from "@cloudscape-design/components/i18n";
 import messages from "@cloudscape-design/components/i18n/messages/all.ja";
@@ -10,10 +8,6 @@ import { navigationItems } from "@/config/navigation";
 
 import "@/styles/globals.css";
 import "@cloudscape-design/global-styles/index.css";
-
-const queryClient = new QueryClient({
-  defaultOptions: { queries: { refetchInterval: 1000 * 6 * 10 } },
-});
 
 function App({ Component, pageProps }: AppProps) {
   const getLayout =
@@ -27,9 +21,7 @@ function App({ Component, pageProps }: AppProps) {
 
   return (
     <I18nProvider locale={"ja"} messages={[messages]}>
-      <QueryClientProvider client={queryClient}>
-        {getLayout(<Component {...pageProps} />)}
-      </QueryClientProvider>
+      {getLayout(<Component {...pageProps} />)}
     </I18nProvider>
   );
 }

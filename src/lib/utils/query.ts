@@ -1,11 +1,14 @@
-import { Option, Some, None } from 'ts-results'
-import type { ParsedUrlQuery } from 'querystring'
+import { Result, ok, err } from "neverthrow";
+import type { ParsedUrlQuery } from "querystring";
 
-export const handleQuery = <T>(query: ParsedUrlQuery, target: string): Option<T> => {
-  const t = query[target] as T
+export const handleQuery = <T>(
+  query: ParsedUrlQuery,
+  target: string,
+): Result<T, null> => {
+  const t = query[target] as T;
   if (t === undefined) {
-    return None
+    return err(null);
   }
 
-  return Some(t)
-}
+  return ok(t);
+};
