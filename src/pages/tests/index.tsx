@@ -9,11 +9,7 @@ const TestsPage: NextPage = () => {
     limit: preferences.preferences.pageSize ?? 20,
   });
   const pagesCount = result?.pagesCount ?? 0;
-  const items =
-    result?.items?.map((row) => ({
-      ...row,
-      createdAt: new Date(row.createdAt),
-    })) ?? [];
+  const items = result?.items ?? [];
 
   const { handleItemClick } = useUserTableAction(items);
 
