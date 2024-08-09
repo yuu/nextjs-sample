@@ -8,18 +8,18 @@ import {
 
 const TestsPage: NextPage = () => {
   const preferences = usePreferences();
-  const { users, isLoading } = useFetchUsers({
+  const { data, isLoading } = useFetchUsers({
     sortingColumn: preferences.sortingColumn,
     page: preferences.currentPageIndex,
     pageSize: preferences.preferences.pageSize ?? 20,
   });
-  const { handleItemClick } = useUserTableAction(users ?? []);
+  const { handleItemClick } = useUserTableAction(data?.items ?? []);
 
   return (
     <UserTable
       allPreferences={preferences}
-      items={users}
-      pagesCount={100}
+      items={data?.items ?? []}
+      pagesCount={data?.pagesCount ?? 0}
       isLoading={isLoading}
       onItemClick={handleItemClick}
     />

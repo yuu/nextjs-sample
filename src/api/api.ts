@@ -2,21 +2,42 @@ import { ResultAsync } from "neverthrow";
 import { type Test } from "@/model/test";
 import { type AppError } from "@/error";
 
-type Nothing = any;
+export type Nothing = any;
 
 type TestFromApi = Omit<Test, "createdAt"> & { createdAt: string };
 
-// TODO: 最大値を返す必要がある
-const fetchTests = (_: Nothing): ResultAsync<Array<Test>, AppError> => {
-  const ret = ResultAsync.fromPromise(fetch("/api/tests"), (e) => e as AppError)
-    .map((res) => res.json() as Promise<Array<TestFromApi>>)
-    .map(
-      (tests) =>
-        tests.map((row) => ({
+type ApiPaginationResult<T> = {
+  items: Array<T>;
+  pagesCount: number;
+  totalItemCount: number;
+};
+
+const fetchTests = ({
+  page,
+  pageSize,
+}: {
+  page: number;
+  pageSize: number;
+}): ResultAsync<ApiPaginationResult<Test>, AppError> => {
+  const query = new URLSearchParams({
+    page: page.toString(),
+    per: pageSize.toString(),
+  });
+  const ret = ResultAsync.fromPromise(
+    fetch(`/api/tests?${query}`),
+    (e) => e as AppError,
+  )
+    .map((res) => res.json() as Promise<ApiPaginationResult<TestFromApi>>)
+    .map((result) => {
+      return {
+        items: result.items.map((row) => ({
           ...row,
           createdAt: new Date(row.createdAt),
         })) as Array<Test>,
-    );
+        pagesCount: result.pagesCount,
+        totalItemCount: result.totalItemCount,
+      };
+    });
 
   return ret;
 };

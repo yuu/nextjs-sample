@@ -14,8 +14,10 @@ export const useFetchUsers = ({
   pageSize,
 }: UseFetchUsers) => {
   const { data, isLoading } = useQuery("/tests", async () => {
-    return (await clientDispatch("fetchTests", undefined))._unsafeUnwrap();
+    return (
+      await clientDispatch("fetchTests", { page, pageSize })
+    )._unsafeUnwrap();
   });
 
-  return { users: data ?? [], isLoading };
+  return { data, isLoading };
 };
