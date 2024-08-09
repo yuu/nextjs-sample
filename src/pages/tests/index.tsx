@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { trpc } from "@/api";
 import {
   UserTable,
   usePreferences,
@@ -8,6 +9,12 @@ import {
 
 const TestsPage: NextPage = () => {
   const preferences = usePreferences();
+
+  const hello = trpc.hello.useQuery({
+    text: "world",
+  });
+  console.log(hello.data);
+
   const { data, isLoading } = useFetchUsers({
     sortingColumn: preferences.sortingColumn,
     page: preferences.currentPageIndex,
