@@ -17,7 +17,7 @@ const toCSV = (users: Array<Test>) => {
         user.streetAddress,
         user.building,
       ].join(" "),
-      user.id,
+      user.id.toString(),
       user.createdAt?.toDateString() ?? "",
     ];
   });
