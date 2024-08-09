@@ -12,6 +12,7 @@ import { usePreferences } from "./usePreferences";
 type UserTableProps = {
   items: Array<UserWithPlanCustomer>;
   pagesCount: number;
+  totalItemCount: number;
   isLoading: boolean;
   allPreferences: ReturnType<typeof usePreferences>;
   onItemClick: ButtonDropdownProps["onItemClick"];
@@ -20,6 +21,7 @@ type UserTableProps = {
 export const UserTable = ({
   items,
   pagesCount,
+  totalItemCount,
   isLoading,
   allPreferences,
   onItemClick,
@@ -53,7 +55,7 @@ export const UserTable = ({
       filter={undefined}
       header={
         <UserTableHeader
-          count={items.length}
+          count={totalItemCount}
           selectCount={selectedItems.length}
           onItemClick={onItemClick}
         />

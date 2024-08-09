@@ -9,6 +9,7 @@ const TestsPage: NextPage = () => {
     limit: preferences.preferences.pageSize ?? 20,
   });
   const pagesCount = result?.pagesCount ?? 0;
+  const totalItemCount = result?.totalItemCount ?? 0;
   const items = result?.items ?? [];
 
   const { handleItemClick } = useUserTableAction(items);
@@ -18,6 +19,7 @@ const TestsPage: NextPage = () => {
       allPreferences={preferences}
       items={items}
       pagesCount={pagesCount}
+      totalItemCount={totalItemCount}
       isLoading={isLoading}
       onItemClick={handleItemClick}
     />
