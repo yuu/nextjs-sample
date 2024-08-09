@@ -1,6 +1,33 @@
-import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { AppLayout } from "@cloudscape-design/components";
+import { I18nProvider } from "@cloudscape-design/components/i18n";
+import messages from "@cloudscape-design/components/i18n/messages/all.ja";
+import { Navigation } from "@/components/navigation";
+import { navigationItems } from "@/config/navigation";
+
+import "@/styles/globals.css";
+import "@cloudscape-design/global-styles/index.css";
+
+const queryClient = new QueryClient({
+  defaultOptions: { queries: { refetchInterval: 1000 * 6 * 10 } },
+});
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  const getLayout =
+    Component.getLayout ??
+    ((page) => (
+      <AppLayout
+        navigation={<Navigation items={navigationItems()} />}
+        content={page}
+      />
+    ));
+
+  return (
+    <I18nProvider locale={"ja"} messages={[messages]}>
+      <QueryClientProvider client={queryClient}>
+        {getLayout(<Component {...pageProps} />)}
+      </QueryClientProvider>
+    </I18nProvider>
+  );
 }
