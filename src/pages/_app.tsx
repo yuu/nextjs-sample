@@ -6,7 +6,6 @@ import messages from "@cloudscape-design/components/i18n/messages/all.ja";
 import { Navigation } from "@/components/navigation";
 import { navigationItems } from "@/config/navigation";
 
-import "@/styles/globals.css";
 import "@cloudscape-design/global-styles/index.css";
 
 function App({ Component, pageProps }: AppProps) {
