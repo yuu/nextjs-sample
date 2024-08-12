@@ -1,8 +1,9 @@
 import { z } from "zod";
-import { procedure } from "@/server/trpc";
+import { procedure, router } from "@/server/trpc";
 import { prisma } from "@/server/prisma";
+import { TestCreateInputSchema } from "@/schema";
 
-const tests = procedure
+const testList = procedure
   .input(
     z.object({
       page: z.number().default(1),
@@ -19,5 +20,19 @@ const tests = procedure
       totalItemCount: result.count,
     };
   });
+
+export const testCreate = procedure
+  .input(TestCreateInputSchema)
+  .mutation(async (opts) => {
+    const { input } = opts;
+    const result = await prisma.test.create({ data: input });
+
+    return result;
+  });
+
+const tests = router({
+  testList,
+  testCreate,
+});
 
 export default tests;

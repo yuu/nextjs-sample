@@ -5,7 +5,7 @@ import { UserTable, usePreferences, useUserTableAction } from "@/features/test";
 const TestsPage: NextPage = () => {
   const preferences = usePreferences();
   const { data = { items: [], pagesCount: 0, totalItemCount: 0 }, isLoading } =
-    trpc.tests.useQuery({
+    trpc.testList.useQuery({
       page: preferences.currentPageIndex,
       limit: preferences.preferences.pageSize ?? 20,
     });
