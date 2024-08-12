@@ -5,10 +5,14 @@ import { I18nProvider } from "@cloudscape-design/components/i18n";
 import messages from "@cloudscape-design/components/i18n/messages/all.ja";
 import { Navigation } from "@/components/navigation";
 import { navigationItems } from "@/config/navigation";
+import { useProgressBar } from "@/hooks";
 
 import "@cloudscape-design/global-styles/index.css";
+import "nprogress/nprogress.css";
 
 function App({ Component, pageProps }: AppProps) {
+  useProgressBar();
+
   const getLayout =
     Component.getLayout ??
     ((page) => (
