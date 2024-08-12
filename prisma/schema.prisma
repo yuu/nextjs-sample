@@ -33,17 +33,18 @@ datasource db {
 }
 
 model Test {
-  id            Int       @id @default(autoincrement())
-  familyName    String    @map("family_name")
-  firstName     String    @map("first_name")
+  id            Int      @id @default(autoincrement())
+  familyName    String   @map("family_name")
+  firstName     String   @map("first_name")
   tel           String?
   email         String
-  postalCode    String    @map("postal_code")
+  postalCode    String   @map("postal_code")
   prefecture    String
   city          String
-  streetAddress String    @map("street_address")
+  streetAddress String   @map("street_address")
   building      String
-  createdAt     DateTime? @map("created_at")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @default(now()) @map("updated_at")
 
   @@map("tests")
 }
