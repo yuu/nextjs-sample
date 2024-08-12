@@ -7,5 +7,10 @@ export const navigationItems = (): ReadonlyArray<SideNavigationProps.Item> => {
       text: "HOME",
       href: "/",
     },
+    {
+      type: "link",
+      text: "test",
+      href: "/tests",
+    },
   ];
 };
