@@ -23,6 +23,7 @@ export const trpc = createTRPCNext<AppRouter>({
   config(opts) {
     return {
       transformer: superjson,
+      abortOnUnmount: true,
       links: [
         httpBatchLink({
           url: `${getBaseUrl()}/api/trpc`,
