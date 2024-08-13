@@ -1,25 +1,17 @@
-import { z } from "zod";
 import { procedure, router } from "@/server/trpc";
 import { prisma } from "@/server/prisma";
-import { TestCreateInputSchema } from "@/schema";
+import { TestCreateInputSchema, paginationInputSchema } from "@/schema";
 
-const list = procedure
-  .input(
-    z.object({
-      page: z.number().default(1),
-      limit: z.number().default(20),
-    }),
-  )
-  .query(async (opts) => {
-    const { input } = opts;
-    const result = await prisma.test.paginate({}, { ...input });
+const list = procedure.input(paginationInputSchema).query(async (opts) => {
+  const { input } = opts;
+  const result = await prisma.test.paginate({}, { ...input });
 
-    return {
-      items: result.result,
-      pagesCount: result.totalPages,
-      totalItemCount: result.count,
-    };
-  });
+  return {
+    items: result.result,
+    pagesCount: result.totalPages,
+    totalItemCount: result.count,
+  };
+});
 
 export const create = procedure
   .input(TestCreateInputSchema)
