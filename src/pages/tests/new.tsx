@@ -3,7 +3,7 @@ import { UserForm } from "@/features/test";
 import { trpc } from "@/api";
 
 const TestsNewPage: NextPage = () => {
-  const mutate = trpc.testCreate.useMutation();
+  const mutate = trpc.test.create.useMutation();
 
   const onSubmit = async (values: any) => {
     const result = await mutate.mutate(values);

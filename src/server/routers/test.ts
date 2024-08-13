@@ -3,7 +3,7 @@ import { procedure, router } from "@/server/trpc";
 import { prisma } from "@/server/prisma";
 import { TestCreateInputSchema } from "@/schema";
 
-const testList = procedure
+const list = procedure
   .input(
     z.object({
       page: z.number().default(1),
@@ -21,7 +21,7 @@ const testList = procedure
     };
   });
 
-export const testCreate = procedure
+export const create = procedure
   .input(TestCreateInputSchema)
   .mutation(async (opts) => {
     const { input } = opts;
@@ -30,9 +30,9 @@ export const testCreate = procedure
     return result;
   });
 
-const tests = router({
-  testList,
-  testCreate,
+const test = router({
+  list,
+  create,
 });
 
-export default tests;
+export default test;
