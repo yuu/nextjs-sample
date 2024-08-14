@@ -11,17 +11,35 @@ import {
 } from "@cloudscape-design/components";
 import { TestCreateInputSchema } from "@/schema";
 import type { Prisma } from "@prisma/client";
+import { z } from "zod";
+
+type FormItemNames = keyof z.infer<typeof TestCreateInputSchema>;
 
 type UserFormProps<Data = any> = {
-  initialValue?: Data;
   onSubmit: (valeus: Data) => PromiseLike<void>;
+  initialValue?: Data;
+  isLoading?: boolean;
+  errors?: Record<string, Array<string>>;
 };
 
-export const UserForm = ({ initialValue, onSubmit }: UserFormProps) => {
-  const { control, handleSubmit } = useForm<Prisma.TestCreateInput>({
+export const UserForm = ({
+  onSubmit,
+  initialValue,
+  isLoading,
+  errors,
+}: UserFormProps) => {
+  const { control, handleSubmit, setError } = useForm<Prisma.TestCreateInput>({
     resolver: zodResolver(TestCreateInputSchema),
     defaultValues: initialValue,
   });
+
+  if (errors) {
+    (Object.keys(errors) as Array<FormItemNames>).forEach((key) => {
+      errors[key].forEach((error) =>
+        setError(key, { message: `i18n by ${error}` }),
+      );
+    });
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -31,7 +49,9 @@ export const UserForm = ({ initialValue, onSubmit }: UserFormProps) => {
             <Button formAction="none" variant="link" href="/tests">
               キャンセル
             </Button>
-            <Button variant="primary">登録</Button>
+            <Button variant="primary" loading={isLoading}>
+              登録
+            </Button>
           </SpaceBetween>
         }
         header={<Header variant="h1">テスト登録</Header>}
