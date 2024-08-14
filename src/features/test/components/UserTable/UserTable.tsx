@@ -51,7 +51,7 @@ export const UserTable = ({
       empty={<Empty />}
       columnDefinitions={columnDefinitions}
       columnDisplay={preferences.contentDisplay}
-      trackBy={(v) => v.id}
+      trackBy={(v) => v.id.toString()}
       filter={undefined}
       header={
         <UserTableHeader

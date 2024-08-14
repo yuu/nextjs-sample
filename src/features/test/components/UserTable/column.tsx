@@ -7,7 +7,7 @@ import {
 } from "@cloudscape-design/components";
 import { createLabelFunction } from "@/lib/cloudscape";
 import { ascCompare } from "@/lib/utils";
-import { type User } from "@/model/user";
+import { type Test } from "@/model/test";
 
 type ColumnDisplays = Array<{ id: string; visible: boolean }>;
 
@@ -16,7 +16,7 @@ const TEL_REGEX1 = /^(\d{4})(\d{2})(\d{4})$/;
 
 const isDate = (value: unknown): value is Date => value instanceof Date;
 
-export const columnDefinitions: TableProps<User>["columnDefinitions"] = [
+export const columnDefinitions: TableProps<Test>["columnDefinitions"] = [
   {
     id: "id",
     header: "ID",
