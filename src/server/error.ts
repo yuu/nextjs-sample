@@ -1,6 +1,8 @@
 import { match, P } from "ts-pattern";
+import { snakeCase, camelCase } from "lodash-es";
 import { Prisma } from "@prisma/client";
 import { TRPCError } from "@trpc/server";
+import { ZodError } from "zod";
 import { APP_ERROR_CODES_BY_KEY } from "@/type/error";
 import {
   AppErrorResponse,
@@ -29,10 +31,11 @@ const parsePrismaErrorCode = (error: Prisma.PrismaClientKnownRequestError) =>
               .with(P.array(P.string), (targets) =>
                 targets.reduce(
                   (acc, target) => {
-                    if (!acc[target]) {
-                      acc[target] = [];
+                    const formItemName = camelCase(target);
+                    if (!acc[formItemName]) {
+                      acc[formItemName] = [];
                     }
-                    acc[target].push("taken");
+                    acc[formItemName].push("taken");
 
                     return acc;
                   },
@@ -84,6 +87,27 @@ export const formatTRPCError = ({ error }: formatTRPCErrorParams) =>
       message: e.message,
       data: {},
     }))
+    .with(P.instanceOf(ZodError), (e) => {
+      const errorMap = e.errors.reduce<Record<string, string[]>>(
+        (acc, error) => {
+          const key = error.path.join(".");
+          if (!acc[key]) {
+            acc[key] = [];
+          }
+          acc[key].push(snakeCase(error.message));
+          return acc;
+        },
+        {},
+      );
+
+      return {
+        code: APP_ERROR_CODES_BY_KEY["RECORD_INVALID"],
+        message: e.message,
+        data: {
+          details: errorMap,
+        },
+      };
+    })
     .with(P.instanceOf(Prisma.PrismaClientKnownRequestError), (e) =>
       parsePrismaErrorCode(e),
     )
