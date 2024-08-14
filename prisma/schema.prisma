@@ -34,7 +34,7 @@ datasource db {
 
 model Test {
   id            Int      @id @default(autoincrement())
-  familyName    String   @map("family_name")
+  familyName    String   @map("family_name") @unique
   firstName     String   @map("first_name")
   tel           String?
   email         String
