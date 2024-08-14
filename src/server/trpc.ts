@@ -1,6 +1,7 @@
 import { initTRPC } from "@trpc/server";
 import superjson from "superjson";
 import type { Meta, Context } from "@/type/trpc/server";
+import { AppError } from "@/type/error";
 import { formatTRPCError } from "./error";
 
 const t = initTRPC
@@ -18,5 +19,27 @@ const t = initTRPC
   });
 
 export const router = t.router;
-export const procedure = t.procedure;
 export const mergeRouters = t.mergeRouters;
+export const middleware = t.middleware;
+const procedure = t.procedure;
+
+const authMiddleware = middleware(async (opts) => {
+  const { meta, next } = opts;
+
+  // check auth and role
+  if (meta?.authRequired) {
+    throw new AppError({ code: "UNAUTHORIZED" });
+  }
+
+  return next();
+});
+
+export const publicProcedure = procedure.use(authMiddleware);
+
+export const privateProcedure = publicProcedure
+  .use(authMiddleware)
+  .meta({ authRequired: true, role: "general" });
+
+export const adminProcedure = publicProcedure
+  .use(authMiddleware)
+  .meta({ authRequired: true, role: "admin" });

@@ -1,8 +1,8 @@
 import { match, P } from "ts-pattern";
 import { Prisma } from "@prisma/client";
 import { TRPCError } from "@trpc/server";
+import { APP_ERROR_CODES_BY_KEY } from "@/type/error";
 import {
-  APP_ERROR_CODES_BY_KEY,
   AppErrorResponse,
   AppErrorResponseWithRecordInvalid,
   AppErrorResponseWithStandardError,
