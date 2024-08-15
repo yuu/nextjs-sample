@@ -1,4 +1,9 @@
-import { router, publicProcedure } from "@/server/trpc";
+import {
+  router,
+  publicProcedure,
+  toListResponse,
+  toSingleResponse,
+} from "@/server/trpc";
 import { prisma } from "@/server/prisma";
 import { TestCreateInputSchema, paginationInputSchema } from "@/schema";
 
@@ -8,11 +13,7 @@ const list = publicProcedure
     const { input } = opts;
     const result = await prisma.test.paginate({}, { ...input });
 
-    return {
-      items: result.result,
-      pagesCount: result.totalPages,
-      totalItemCount: result.count,
-    };
+    return toListResponse(result);
   });
 
 export const create = publicProcedure
@@ -21,7 +22,7 @@ export const create = publicProcedure
     const { input } = opts;
     const result = await prisma.test.create({ data: input });
 
-    return result;
+    return toSingleResponse({ result });
   });
 
 const test = router({

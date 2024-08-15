@@ -43,3 +43,21 @@ export const privateProcedure = publicProcedure
 export const adminProcedure = publicProcedure
   .use(authMiddleware)
   .meta({ authRequired: true, role: "admin" });
+
+export const toListResponse = <Result>(result: {
+  result: Result;
+  totalPages: number;
+  count: number;
+}) => {
+  return {
+    items: result.result,
+    pagesCount: result.totalPages,
+    totalItemCount: result.count,
+  };
+};
+
+export const toSingleResponse = <Result>(result: { result: Result }) => {
+  return {
+    item: result.result,
+  };
+};
