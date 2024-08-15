@@ -1,2 +1,134 @@
 {
+  "features.test.components.Empty.text": [
+    {
+      "type": 0,
+      "value": "データがありません"
+    }
+  ],
+  "features.test.components.UserTable.CollectionPreferences.cancelLabel": [
+    {
+      "type": 0,
+      "value": "キャンセル"
+    }
+  ],
+  "features.test.components.UserTable.CollectionPreferences.confirmLabel": [
+    {
+      "type": 0,
+      "value": "保存"
+    }
+  ],
+  "features.test.components.UserTable.CollectionPreferences.title": [
+    {
+      "type": 0,
+      "value": "設定"
+    }
+  ],
+  "features.test.components.UserTable.column.address": [
+    {
+      "type": 0,
+      "value": "住所"
+    }
+  ],
+  "features.test.components.UserTable.column.createdAt": [
+    {
+      "type": 0,
+      "value": "登録日"
+    }
+  ],
+  "features.test.components.UserTable.column.email": [
+    {
+      "type": 0,
+      "value": "EMAIL"
+    }
+  ],
+  "features.test.components.UserTable.column.id": [
+    {
+      "type": 0,
+      "value": "ID"
+    }
+  ],
+  "features.test.components.UserTable.column.name": [
+    {
+      "type": 0,
+      "value": "氏名"
+    }
+  ],
+  "features.test.components.UserTable.column.tel": [
+    {
+      "type": 0,
+      "value": "TEL"
+    }
+  ],
+  "features.test.components.UserTable.loadingText": [
+    {
+      "type": 0,
+      "value": "Loading..."
+    }
+  ],
+  "features.test.components.UserTable.pageSizePreference.title": [
+    {
+      "type": 0,
+      "value": "ページサイズ"
+    }
+  ],
+  "features.test.components.UserTableHeader.action": [
+    {
+      "type": 0,
+      "value": "アクション"
+    }
+  ],
+  "features.test.components.UserTableHeader.action.register": [
+    {
+      "type": 0,
+      "value": "登録"
+    }
+  ],
+  "features.test.components.UserTableHeader.danger.delete.disabledReason": [
+    {
+      "type": 0,
+      "value": "未実装"
+    }
+  ],
+  "features.test.components.UserTableHeader.danger.delete.text": [
+    {
+      "type": 0,
+      "value": "退会"
+    }
+  ],
+  "features.test.components.UserTableHeader.danger.disabledReason": [
+    {
+      "type": 0,
+      "value": "1つ以上選択してください"
+    }
+  ],
+  "features.test.components.UserTableHeader.danger.text": [
+    {
+      "type": 0,
+      "value": "デンジャーゾーン"
+    }
+  ],
+  "features.test.components.UserTableHeader.edit.disabledReason": [
+    {
+      "type": 0,
+      "value": "未実装"
+    }
+  ],
+  "features.test.components.UserTableHeader.edit.text": [
+    {
+      "type": 0,
+      "value": "編集"
+    }
+  ],
+  "features.test.components.UserTableHeader.export.text": [
+    {
+      "type": 0,
+      "value": "エクスポート"
+    }
+  ],
+  "features.test.components.UserTableHeader.header": [
+    {
+      "type": 0,
+      "value": "会員一覧"
+    }
+  ]
 }

@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import { match, P } from "ts-pattern";
 import Link from "next/link";
 import {
@@ -19,12 +20,22 @@ const isDate = (value: unknown): value is Date => value instanceof Date;
 export const columnDefinitions: TableProps<Test>["columnDefinitions"] = [
   {
     id: "id",
-    header: "ID",
+    header: (
+      <FormattedMessage
+        id="features.test.components.UserTable.column.id"
+        defaultMessage="ID"
+      />
+    ),
     cell: (item) => item.id,
   },
   {
     id: "name",
-    header: "氏名",
+    header: (
+      <FormattedMessage
+        id="features.test.components.UserTable.column.name"
+        defaultMessage="氏名"
+      />
+    ),
     width: 160,
     cell: (item) => (
       <Link href={`/tests/${item.id}`}>
@@ -39,7 +50,12 @@ export const columnDefinitions: TableProps<Test>["columnDefinitions"] = [
   },
   {
     id: "tel",
-    header: "TEL",
+    header: (
+      <FormattedMessage
+        id="features.test.components.UserTable.column.tel"
+        defaultMessage="TEL"
+      />
+    ),
     width: 160,
     cell: (item) =>
       match(item.tel)
@@ -79,18 +95,33 @@ export const columnDefinitions: TableProps<Test>["columnDefinitions"] = [
   },
   {
     id: "email",
-    header: "EMAIL",
+    header: (
+      <FormattedMessage
+        id="features.test.components.UserTable.column.email"
+        defaultMessage="EMAIL"
+      />
+    ),
     cell: (item) => item.email,
   },
   {
     id: "address",
-    header: "住所",
+    header: (
+      <FormattedMessage
+        id="features.test.components.UserTable.column.address"
+        defaultMessage="住所"
+      />
+    ),
     cell: (item) =>
       item.prefecture + item.city + item.streetAddress + item.building,
   },
   {
     id: "createdAt",
-    header: "登録日",
+    header: (
+      <FormattedMessage
+        id="features.test.components.UserTable.column.createdAt"
+        defaultMessage="登録日"
+      />
+    ),
     cell: (item) =>
       match(item.createdAt)
         .with(P.nullish, () => "-")
@@ -134,6 +165,6 @@ export const columnDisplay: ColumnDisplays = [
 export const contentDisplayPreferenceOptions = columnDefinitions.map(
   ({ id, header }) => ({
     id: `${id}`,
-    label: `${header}`,
+    label: header as string,
   }),
 );

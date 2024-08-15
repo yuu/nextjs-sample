@@ -1,3 +1,4 @@
+import { useIntl } from "react-intl";
 import {
   Table,
   Pagination,
@@ -39,6 +40,8 @@ export const UserTable = ({
     onSortingChange,
   } = allPreferences;
 
+  const intl = useIntl();
+
   return (
     <Table
       selectionType="single"
@@ -47,7 +50,10 @@ export const UserTable = ({
       stripedRows
       resizableColumns
       enableKeyboardNavigation
-      loadingText="Loading..."
+      loadingText={intl.formatMessage({
+        id: "features.test.components.UserTable.loadingText",
+        defaultMessage: "Loading...",
+      })}
       empty={<Empty />}
       columnDefinitions={columnDefinitions}
       columnDisplay={preferences.contentDisplay}
@@ -70,12 +76,24 @@ export const UserTable = ({
       preferences={
         <CollectionPreferences
           onConfirm={onChangePreferences}
-          title="設定"
-          confirmLabel="保存"
-          cancelLabel="キャンセル"
+          title={intl.formatMessage({
+            id: "features.test.components.UserTable.CollectionPreferences.title",
+            defaultMessage: "設定",
+          })}
+          confirmLabel={intl.formatMessage({
+            id: "features.test.components.UserTable.CollectionPreferences.confirmLabel",
+            defaultMessage: "保存",
+          })}
+          cancelLabel={intl.formatMessage({
+            id: "features.test.components.UserTable.CollectionPreferences.cancelLabel",
+            defaultMessage: "キャンセル",
+          })}
           preferences={preferences}
           pageSizePreference={{
-            title: "ページサイズ",
+            title: intl.formatMessage({
+              id: "features.test.components.UserTable.pageSizePreference.title",
+              defaultMessage: "ページサイズ",
+            }),
             options: [
               { value: 10, label: "10" },
               { value: 20, label: "20" },
