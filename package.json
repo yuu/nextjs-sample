@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "i18n:extract": "formatjs extract 'src/**/*.{ts,tsx}' --ignore='**/*.d.ts' --out-file src/locales/ja.json --format simple",
+    "i18n:compile": "formatjs compile-folder src/locales src/locales/compiled --format simple --ast"
   },
   "dependencies": {
     "@cloudscape-design/components": "^3.0.709",
@@ -25,6 +27,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.52.2",
+    "react-intl": "^6.6.8",
     "react-query": "^3.39.3",
     "superjson": "^2.2.1",
     "ts-pattern": "^5.2.0",
@@ -32,6 +35,8 @@
     "zod-prisma-types": "^3.1.8"
   },
   "devDependencies": {
+    "@formatjs/cli": "^6.2.12",
+    "@formatjs/ts-transformer": "^3.13.14",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^20",
     "@types/nprogress": "^0.2.3",
