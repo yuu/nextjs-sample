@@ -1,8 +1,9 @@
 module.exports = {
   extends: "next/core-web-vitals",
-  plugins: ["neverthrow"],
+  plugins: ["neverthrow", "formatjs"],
   rules: {
     "neverthrow/must-use-result": "error",
+    "formatjs/no-offset": "error",
   },
   parser: "@typescript-eslint/parser",
   parserOptions: {

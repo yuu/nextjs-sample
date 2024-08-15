@@ -45,6 +45,7 @@
     "@typescript-eslint/parser": "^8.0.1",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.5",
+    "eslint-plugin-formatjs": "^4.13.3",
     "eslint-plugin-neverthrow": "^1.1.4",
     "postcss": "^8",
     "prettier": "^3.3.3",
