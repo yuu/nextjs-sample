@@ -17,7 +17,7 @@ import "nprogress/nprogress.css";
 
 // Suppress warning for ssr useLayoutEffect
 // https://gist.github.com/gaearon/e7d97cdf38a2907924ea12e4ebdf3c85
-if (!process.browser) React.useLayoutEffect = React.useEffect;
+if (!typeof window) React.useLayoutEffect = React.useEffect;
 
 function App({ Component, pageProps }: AppProps) {
   useProgressBar();
