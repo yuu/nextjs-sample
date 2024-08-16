@@ -134,7 +134,9 @@ export const columnDefinitions: TableProps<Test>["columnDefinitions"] = [
             hour="2-digit"
             minute="2-digit"
             second="2-digit"
-          />
+          >
+            {(d) => <>{d.replaceAll("/", "-")}</>}
+          </FormattedTime>
         ))
         .otherwise(() => "-"),
     sortingField: "createAt",
