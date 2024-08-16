@@ -1,4 +1,4 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, FormattedTime } from "react-intl";
 import { match, P } from "ts-pattern";
 import Link from "next/link";
 import {
@@ -125,7 +125,17 @@ export const columnDefinitions: TableProps<Test>["columnDefinitions"] = [
     cell: (item) =>
       match(item.createdAt)
         .with(P.nullish, () => "-")
-        .with(P.when(isDate), (v) => v.toLocaleString())
+        .with(P.when(isDate), (v) => (
+          <FormattedTime
+            value={v}
+            year="numeric"
+            month="2-digit"
+            day="2-digit"
+            hour="2-digit"
+            minute="2-digit"
+            second="2-digit"
+          />
+        ))
         .otherwise(() => "-"),
     sortingField: "createAt",
     ariaLabel: createLabelFunction("createAt"),
