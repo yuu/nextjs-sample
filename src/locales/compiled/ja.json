@@ -1,4 +1,802 @@
 {
+  "defaults.date.abbr_day_names.fri": [
+    {
+      "type": 0,
+      "value": "金"
+    }
+  ],
+  "defaults.date.abbr_day_names.mon": [
+    {
+      "type": 0,
+      "value": "月"
+    }
+  ],
+  "defaults.date.abbr_day_names.sat": [
+    {
+      "type": 0,
+      "value": "土"
+    }
+  ],
+  "defaults.date.abbr_day_names.sun": [
+    {
+      "type": 0,
+      "value": "日"
+    }
+  ],
+  "defaults.date.abbr_day_names.thu": [
+    {
+      "type": 0,
+      "value": "木"
+    }
+  ],
+  "defaults.date.abbr_day_names.tue": [
+    {
+      "type": 0,
+      "value": "火"
+    }
+  ],
+  "defaults.date.abbr_day_names.wed": [
+    {
+      "type": 0,
+      "value": "水"
+    }
+  ],
+  "defaults.date.abbr_month_names.apr": [
+    {
+      "type": 0,
+      "value": "4月"
+    }
+  ],
+  "defaults.date.abbr_month_names.aug": [
+    {
+      "type": 0,
+      "value": "8月"
+    }
+  ],
+  "defaults.date.abbr_month_names.dec": [
+    {
+      "type": 0,
+      "value": "12月"
+    }
+  ],
+  "defaults.date.abbr_month_names.feb": [
+    {
+      "type": 0,
+      "value": "2月"
+    }
+  ],
+  "defaults.date.abbr_month_names.jan": [
+    {
+      "type": 0,
+      "value": "1月"
+    }
+  ],
+  "defaults.date.abbr_month_names.jul": [
+    {
+      "type": 0,
+      "value": "7月"
+    }
+  ],
+  "defaults.date.abbr_month_names.jun": [
+    {
+      "type": 0,
+      "value": "6月"
+    }
+  ],
+  "defaults.date.abbr_month_names.mar": [
+    {
+      "type": 0,
+      "value": "3月"
+    }
+  ],
+  "defaults.date.abbr_month_names.may": [
+    {
+      "type": 0,
+      "value": "5月"
+    }
+  ],
+  "defaults.date.abbr_month_names.nov": [
+    {
+      "type": 0,
+      "value": "11月"
+    }
+  ],
+  "defaults.date.abbr_month_names.oct": [
+    {
+      "type": 0,
+      "value": "10月"
+    }
+  ],
+  "defaults.date.abbr_month_names.sep": [
+    {
+      "type": 0,
+      "value": "9月"
+    }
+  ],
+  "defaults.date.day_names.fri": [
+    {
+      "type": 0,
+      "value": "金曜日"
+    }
+  ],
+  "defaults.date.day_names.mon": [
+    {
+      "type": 0,
+      "value": "月曜日"
+    }
+  ],
+  "defaults.date.day_names.sat": [
+    {
+      "type": 0,
+      "value": "土曜日"
+    }
+  ],
+  "defaults.date.day_names.sun": [
+    {
+      "type": 0,
+      "value": "日曜日"
+    }
+  ],
+  "defaults.date.day_names.thu": [
+    {
+      "type": 0,
+      "value": "木曜日"
+    }
+  ],
+  "defaults.date.day_names.tue": [
+    {
+      "type": 0,
+      "value": "火曜日"
+    }
+  ],
+  "defaults.date.day_names.wed": [
+    {
+      "type": 0,
+      "value": "水曜日"
+    }
+  ],
+  "defaults.date.month_names.apr": [
+    {
+      "type": 0,
+      "value": "4月"
+    }
+  ],
+  "defaults.date.month_names.aug": [
+    {
+      "type": 0,
+      "value": "8月"
+    }
+  ],
+  "defaults.date.month_names.dec": [
+    {
+      "type": 0,
+      "value": "12月"
+    }
+  ],
+  "defaults.date.month_names.feb": [
+    {
+      "type": 0,
+      "value": "2月"
+    }
+  ],
+  "defaults.date.month_names.jan": [
+    {
+      "type": 0,
+      "value": "1月"
+    }
+  ],
+  "defaults.date.month_names.jul": [
+    {
+      "type": 0,
+      "value": "7月"
+    }
+  ],
+  "defaults.date.month_names.jun": [
+    {
+      "type": 0,
+      "value": "6月"
+    }
+  ],
+  "defaults.date.month_names.mar": [
+    {
+      "type": 0,
+      "value": "3月"
+    }
+  ],
+  "defaults.date.month_names.may": [
+    {
+      "type": 0,
+      "value": "5月"
+    }
+  ],
+  "defaults.date.month_names.nov": [
+    {
+      "type": 0,
+      "value": "11月"
+    }
+  ],
+  "defaults.date.month_names.oct": [
+    {
+      "type": 0,
+      "value": "10月"
+    }
+  ],
+  "defaults.date.month_names.sep": [
+    {
+      "type": 0,
+      "value": "9月"
+    }
+  ],
+  "defaults.datetime.prompts.day": [
+    {
+      "type": 0,
+      "value": "日"
+    }
+  ],
+  "defaults.datetime.prompts.hour": [
+    {
+      "type": 0,
+      "value": "時"
+    }
+  ],
+  "defaults.datetime.prompts.minute": [
+    {
+      "type": 0,
+      "value": "分"
+    }
+  ],
+  "defaults.datetime.prompts.month": [
+    {
+      "type": 0,
+      "value": "月"
+    }
+  ],
+  "defaults.datetime.prompts.second": [
+    {
+      "type": 0,
+      "value": "秒"
+    }
+  ],
+  "defaults.datetime.prompts.year": [
+    {
+      "type": 0,
+      "value": "年"
+    }
+  ],
+  "defaults.errors.already_linked": [
+    {
+      "type": 1,
+      "value": "model"
+    },
+    {
+      "type": 0,
+      "value": "はすでに紐づいています"
+    }
+  ],
+  "defaults.errors.messages.accepted": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "を受諾してください"
+    }
+  ],
+  "defaults.errors.messages.blank": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "を入力してください"
+    }
+  ],
+  "defaults.errors.messages.confirmation": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "と"
+    },
+    {
+      "type": 1,
+      "value": "attr_confirmation"
+    },
+    {
+      "type": 0,
+      "value": "の入力が一致しません"
+    }
+  ],
+  "defaults.errors.messages.empty": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "を入力してください"
+    }
+  ],
+  "defaults.errors.messages.equal_to": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "は"
+    },
+    {
+      "type": 1,
+      "value": "count"
+    },
+    {
+      "type": 0,
+      "value": "にしてください"
+    }
+  ],
+  "defaults.errors.messages.even": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "は偶数にしてください"
+    }
+  ],
+  "defaults.errors.messages.exclusion": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "は予約されています"
+    }
+  ],
+  "defaults.errors.messages.fatal": [
+    {
+      "type": 0,
+      "value": "予期せぬエラーが発生しました。システム管理者にお問い合わせください"
+    }
+  ],
+  "defaults.errors.messages.greater_than": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "は"
+    },
+    {
+      "type": 1,
+      "value": "count"
+    },
+    {
+      "type": 0,
+      "value": "より大きい値にしてください"
+    }
+  ],
+  "defaults.errors.messages.greater_than_or_equal_to": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "は"
+    },
+    {
+      "type": 1,
+      "value": "count"
+    },
+    {
+      "type": 0,
+      "value": "以上の値にしてください"
+    }
+  ],
+  "defaults.errors.messages.inclusion": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "は一覧にありません"
+    }
+  ],
+  "defaults.errors.messages.invalid": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "は不正な値です"
+    }
+  ],
+  "defaults.errors.messages.less_than": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "は"
+    },
+    {
+      "type": 1,
+      "value": "count"
+    },
+    {
+      "type": 0,
+      "value": "より小さい値にしてください"
+    }
+  ],
+  "defaults.errors.messages.less_than_or_equal_to": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "は"
+    },
+    {
+      "type": 1,
+      "value": "count"
+    },
+    {
+      "type": 0,
+      "value": "以下の値にしてください"
+    }
+  ],
+  "defaults.errors.messages.model_invalid": [
+    {
+      "type": 0,
+      "value": "バリデーションに失敗しました: "
+    },
+    {
+      "type": 1,
+      "value": "errors"
+    }
+  ],
+  "defaults.errors.messages.not_a_number": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "は数値で入力してください"
+    }
+  ],
+  "defaults.errors.messages.not_an_integer": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "は整数で入力してください"
+    }
+  ],
+  "defaults.errors.messages.odd": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "は奇数にしてください"
+    }
+  ],
+  "defaults.errors.messages.other_than": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "は"
+    },
+    {
+      "type": 1,
+      "value": "count"
+    },
+    {
+      "type": 0,
+      "value": "以外の値にしてください"
+    }
+  ],
+  "defaults.errors.messages.present": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "は入力しないでください"
+    }
+  ],
+  "defaults.errors.messages.required": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "を入力してください"
+    }
+  ],
+  "defaults.errors.messages.taken": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "はすでに存在します"
+    }
+  ],
+  "defaults.errors.messages.too_long": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "は"
+    },
+    {
+      "type": 1,
+      "value": "count"
+    },
+    {
+      "type": 0,
+      "value": "文字以内で入力してください"
+    }
+  ],
+  "defaults.errors.messages.too_short": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "は"
+    },
+    {
+      "type": 1,
+      "value": "count"
+    },
+    {
+      "type": 0,
+      "value": "文字以上で入力してください"
+    }
+  ],
+  "defaults.errors.messages.wrong_length": [
+    {
+      "type": 1,
+      "value": "attr"
+    },
+    {
+      "type": 0,
+      "value": "は"
+    },
+    {
+      "type": 1,
+      "value": "count"
+    },
+    {
+      "type": 0,
+      "value": "文字で入力してください"
+    }
+  ],
+  "defaults.errors.record_invalid": [
+    {
+      "type": 0,
+      "value": "バリデーションに失敗しました: "
+    },
+    {
+      "type": 1,
+      "value": "errors"
+    }
+  ],
+  "defaults.errors.record_not_destroyed": [
+    {
+      "type": 0,
+      "value": "削除できませんでした"
+    }
+  ],
+  "defaults.errors.restrict_dependent_destroy.has_many": [
+    {
+      "type": 0,
+      "value": "%"
+    },
+    {
+      "type": 1,
+      "value": "record"
+    },
+    {
+      "type": 0,
+      "value": "が存在しているので削除できません"
+    }
+  ],
+  "defaults.errors.restrict_dependent_destroy.has_one": [
+    {
+      "type": 0,
+      "value": "%"
+    },
+    {
+      "type": 1,
+      "value": "record"
+    },
+    {
+      "type": 0,
+      "value": "が存在しているので削除できません"
+    }
+  ],
+  "defaults.errors.template.body": [
+    {
+      "type": 0,
+      "value": "次の項目を確認してください"
+    }
+  ],
+  "defaults.errors.template.header.one": [
+    {
+      "type": 1,
+      "value": "model"
+    },
+    {
+      "type": 0,
+      "value": "にエラーが発生しました"
+    }
+  ],
+  "defaults.errors.template.header.other": [
+    {
+      "type": 1,
+      "value": "model"
+    },
+    {
+      "type": 0,
+      "value": "に"
+    },
+    {
+      "type": 1,
+      "value": "count"
+    },
+    {
+      "type": 0,
+      "value": "個のエラーが発生しました"
+    }
+  ],
+  "defaults.helpers.links.back": [
+    {
+      "type": 0,
+      "value": "戻る"
+    }
+  ],
+  "defaults.helpers.links.cancel": [
+    {
+      "type": 0,
+      "value": "キャンセル"
+    }
+  ],
+  "defaults.helpers.links.create": [
+    {
+      "type": 0,
+      "value": "登録"
+    }
+  ],
+  "defaults.helpers.links.destroy": [
+    {
+      "type": 0,
+      "value": "削除"
+    }
+  ],
+  "defaults.helpers.links.edit": [
+    {
+      "type": 0,
+      "value": "編集"
+    }
+  ],
+  "defaults.helpers.links.new": [
+    {
+      "type": 0,
+      "value": "新規作成"
+    }
+  ],
+  "defaults.helpers.links.show": [
+    {
+      "type": 0,
+      "value": "詳細"
+    }
+  ],
+  "defaults.helpers.links.update": [
+    {
+      "type": 0,
+      "value": "更新"
+    }
+  ],
+  "defaults.helpers.select.prompt": [
+    {
+      "type": 0,
+      "value": "選択してください"
+    }
+  ],
+  "defaults.helpers.submit.create": [
+    {
+      "type": 0,
+      "value": "登録する"
+    }
+  ],
+  "defaults.helpers.submit.destroy": [
+    {
+      "type": 0,
+      "value": "削除する"
+    }
+  ],
+  "defaults.helpers.submit.submit": [
+    {
+      "type": 0,
+      "value": "保存する"
+    }
+  ],
+  "defaults.helpers.submit.update": [
+    {
+      "type": 0,
+      "value": "更新する"
+    }
+  ],
+  "defaults.number.human.storage_units.byte": [
+    {
+      "type": 0,
+      "value": "バイト"
+    }
+  ],
+  "defaults.number.human.storage_units.eb": [
+    {
+      "type": 0,
+      "value": "EB"
+    }
+  ],
+  "defaults.number.human.storage_units.gb": [
+    {
+      "type": 0,
+      "value": "GB"
+    }
+  ],
+  "defaults.number.human.storage_units.kb": [
+    {
+      "type": 0,
+      "value": "KB"
+    }
+  ],
+  "defaults.number.human.storage_units.mb": [
+    {
+      "type": 0,
+      "value": "MB"
+    }
+  ],
+  "defaults.number.human.storage_units.pb": [
+    {
+      "type": 0,
+      "value": "PB"
+    }
+  ],
+  "defaults.number.human.storage_units.tb": [
+    {
+      "type": 0,
+      "value": "TB"
+    }
+  ],
   "features.test.components.Empty.text": [
     {
       "type": 0,
