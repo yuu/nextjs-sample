@@ -1,9 +1,11 @@
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
-  extends: "next/core-web-vitals",
+  extends: ["next/core-web-vitals", "plugin:prettier/recommended"],
   plugins: ["neverthrow", "formatjs"],
   rules: {
     "neverthrow/must-use-result": "error",
     "formatjs/no-offset": "error",
+    "no-unused-vars": "error",
   },
   parser: "@typescript-eslint/parser",
   parserOptions: {
