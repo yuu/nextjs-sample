@@ -19,6 +19,7 @@
     "@trpc/next": "^10.45.2",
     "@trpc/react-query": "^10.45.2",
     "@trpc/server": "^10.45.2",
+    "crypto": "^1.0.1",
     "lodash-es": "^4.17.21",
     "neverthrow": "^7.0.0",
     "next": "14.2.5",
