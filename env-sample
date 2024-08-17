@@ -6,4 +6,6 @@
 
 DATABASE_URL="postgresql://root:root@localhost:5432/sample_development?schema=public"
 
+NEXTAUTH_URL=http://localhost:3000
+
 DEBUG="prisma*"
