@@ -2,9 +2,10 @@ import React from "react";
 import type { AppProps } from "next/app";
 import { AppLayout } from "@cloudscape-design/components";
 import { Navigation } from "@/components/navigation";
+import { Guard } from "@/components/guard";
 import { navigationItems } from "@/config/navigation";
 import { useProgressBar } from "@/hooks";
-import { I18nProvider } from "@/providers";
+import { I18nProvider, AuthProvider } from "@/providers";
 import { trpc } from "@/api";
 
 import "@cloudscape-design/global-styles/index.css";
@@ -26,7 +27,13 @@ function App({ Component, pageProps }: AppProps) {
       />
     ));
 
-  return <I18nProvider>{getLayout(<Component {...pageProps} />)}</I18nProvider>;
+  return (
+    <I18nProvider>
+      <AuthProvider>
+        <Guard authGuard>{getLayout(<Component {...pageProps} />)}</Guard>
+      </AuthProvider>
+    </I18nProvider>
+  );
 }
 
 export default trpc.withTRPC(App);

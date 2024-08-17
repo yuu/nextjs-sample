@@ -3,6 +3,8 @@ import { randomUUID } from "crypto";
 import { AuthOptions } from "next-auth";
 import { getOptions } from "./configuration";
 
+export const SIGNIN_PATH = "/auth/signin";
+
 export const options = (): ResultAsync<AuthOptions, Error> => {
   return getOptions().map((opt) => {
     return {
