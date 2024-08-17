@@ -2,7 +2,6 @@ import { match, P } from "ts-pattern";
 import { PropsWithChildren, ReactNode, useEffect } from "react";
 import { useRouter, NextRouter } from "next/router";
 import { useAuthContext, AuthContext } from "@/context";
-import { SIGNIN_PATH } from "@/config/auth";
 
 const requireSignIn = (auth: AuthContext): boolean =>
   match([auth.status, auth.session])
@@ -24,26 +23,13 @@ const isFallback = (auth: AuthContext): boolean =>
     .with(["unauthenticated", P.not(P.nullish)], () => false)
     .exhaustive();
 
-const redirectParams = (router: NextRouter) =>
-  match(router.asPath)
-    .with("/", () => ({
-      pathname: SIGNIN_PATH,
-    }))
-    .otherwise(() => ({
-      pathname: SIGNIN_PATH,
-      query: { returnUrl: router.asPath },
-    }));
-
 const toSignIn = (router: NextRouter, auth: AuthContext) => {
   if (!router.isReady) {
     return;
   }
-  if (router.asPath === SIGNIN_PATH) {
-    return;
-  }
+
   if (requireSignIn(auth)) {
-    auth.signin(); // default sign-in page
-    // router.replace(redirectParams(router));
+    auth.signin();
   }
 };
 

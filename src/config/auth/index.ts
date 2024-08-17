@@ -3,15 +3,13 @@ import { randomUUID } from "crypto";
 import { AuthOptions } from "next-auth";
 import { getOptions } from "./configuration";
 
-export const SIGNIN_PATH = "/auth/signin";
-
 export const options = (): ResultAsync<AuthOptions, Error> => {
   return getOptions().map((opt) => {
     return {
-      theme: {
-        logo: "/images/auth-tochimaru-graph.png",
-        brandColor: "#1786fb",
-        colorScheme: "light",
+      pages: {
+        signIn: "/auth/signin",
+        error: "/auth/signin",
+        signOut: "/auth/signin",
       },
       session: {
         strategy: "jwt",

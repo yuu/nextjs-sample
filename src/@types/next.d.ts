@@ -11,6 +11,8 @@ declare module "next" {
     P = GlobalLayoutProps,
     IP = P,
   > = NextComponentType<NextPageContext, IP, P> & {
+    authGuard?: boolean;
+    guestGuard?: boolean;
     getLayout?: (page: ReactNode) => ReactNode;
   };
 }

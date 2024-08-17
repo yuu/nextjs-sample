@@ -15,9 +15,15 @@ import "nprogress/nprogress.css";
 // https://gist.github.com/gaearon/e7d97cdf38a2907924ea12e4ebdf3c85
 if (!typeof window) React.useLayoutEffect = React.useEffect;
 
+const getPageAttributes = (Component: AppProps["Component"]) => ({
+  authGuard: Component.authGuard ?? true,
+  guestGuard: Component.guestGuard ?? false,
+});
+
 function App({ Component, pageProps }: AppProps) {
   useProgressBar();
 
+  const { authGuard } = getPageAttributes(Component);
   const getLayout =
     Component.getLayout ??
     ((page) => (
@@ -30,7 +36,9 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <I18nProvider>
       <AuthProvider>
-        <Guard authGuard>{getLayout(<Component {...pageProps} />)}</Guard>
+        <Guard authGuard={authGuard}>
+          {getLayout(<Component {...pageProps} />)}
+        </Guard>
       </AuthProvider>
     </I18nProvider>
   );
