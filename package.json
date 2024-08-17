@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --dir src",
-    "i18n:extract": "formatjs extract 'src/**/*.{ts,tsx}' --ignore='**/*.d.ts' --out-file src/locales/ja.json --format simple",
-    "i18n:compile": "formatjs compile-folder src/locales src/locales/compiled --format simple --ast"
+    "i18n:extract": "formatjs extract 'src/**/*.{ts,tsx}' --ignore='**/*.d.ts' --out-file src/locales/extract/ja.json --format simple",
+    "i18n:compile": "formatjs compile-folder src/locales/extract src/locales/compiled --format simple --ast"
   },
   "dependencies": {
     "@cloudscape-design/components": "^3.0.709",

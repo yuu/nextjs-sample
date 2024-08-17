@@ -311,6 +311,12 @@
       "value": "の入力が一致しません"
     }
   ],
+  "defaults.errors.messages.custom": [
+    {
+      "type": 0,
+      "value": "入力形式が間違っています。"
+    }
+  ],
   "defaults.errors.messages.empty": [
     {
       "type": 1,
@@ -421,6 +427,152 @@
       "value": "は不正な値です"
     }
   ],
+  "defaults.errors.messages.invalid_arguments": [
+    {
+      "type": 0,
+      "value": "引数が間違っています。"
+    }
+  ],
+  "defaults.errors.messages.invalid_date": [
+    {
+      "type": 0,
+      "value": "間違った日時データです。"
+    }
+  ],
+  "defaults.errors.messages.invalid_enum_value": [
+    {
+      "type": 0,
+      "value": "{received}は無効な値です。"
+    },
+    {
+      "type": 1,
+      "value": "options"
+    },
+    {
+      "type": 0,
+      "value": "で入力してください。"
+    }
+  ],
+  "defaults.errors.messages.invalid_intersection_types": [
+    {
+      "type": 0,
+      "value": "交差型のマージができませんでした。"
+    }
+  ],
+  "defaults.errors.messages.invalid_literal": [
+    {
+      "type": 0,
+      "value": "無効なリテラル値です。"
+    },
+    {
+      "type": 1,
+      "value": "expected"
+    },
+    {
+      "type": 0,
+      "value": "を入力してください。"
+    }
+  ],
+  "defaults.errors.messages.invalid_return_type": [
+    {
+      "type": 0,
+      "value": "返値の型が間違っています。"
+    }
+  ],
+  "defaults.errors.messages.invalid_string.any": [
+    {
+      "type": 1,
+      "value": "validation"
+    },
+    {
+      "type": 0,
+      "value": "の形式で入力してください。"
+    }
+  ],
+  "defaults.errors.messages.invalid_string.endsWith": [
+    {
+      "type": 0,
+      "value": "\""
+    },
+    {
+      "type": 1,
+      "value": "endsWith"
+    },
+    {
+      "type": 0,
+      "value": "\"で終わる文字列である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.invalid_string.regex": [
+    {
+      "type": 0,
+      "value": "入力形式が間違っています。"
+    }
+  ],
+  "defaults.errors.messages.invalid_string.startsWith": [
+    {
+      "type": 0,
+      "value": "\""
+    },
+    {
+      "type": 1,
+      "value": "startsWith"
+    },
+    {
+      "type": 0,
+      "value": "\"で始まる文字列である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.invalid_type": [
+    {
+      "type": 1,
+      "value": "expected"
+    },
+    {
+      "type": 0,
+      "value": "での入力を期待していますが、"
+    },
+    {
+      "type": 1,
+      "value": "received"
+    },
+    {
+      "type": 0,
+      "value": "が入力されました。"
+    }
+  ],
+  "defaults.errors.messages.invalid_type_received_null": [
+    {
+      "type": 0,
+      "value": "必須"
+    }
+  ],
+  "defaults.errors.messages.invalid_type_received_undefined": [
+    {
+      "type": 0,
+      "value": "必須"
+    }
+  ],
+  "defaults.errors.messages.invalid_union": [
+    {
+      "type": 0,
+      "value": "入力形式が間違っています。"
+    }
+  ],
+  "defaults.errors.messages.invalid_union_discriminator": [
+    {
+      "type": 0,
+      "value": "無効な識別子です。"
+    },
+    {
+      "type": 1,
+      "value": "options"
+    },
+    {
+      "type": 0,
+      "value": "で入力してください。"
+    }
+  ],
   "defaults.errors.messages.less_than": [
     {
       "type": 1,
@@ -487,6 +639,22 @@
       "value": "は整数で入力してください"
     }
   ],
+  "defaults.errors.messages.not_finite": [
+    {
+      "type": 0,
+      "value": "有限数である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.not_multiple_of": [
+    {
+      "type": 1,
+      "value": "multipleOf"
+    },
+    {
+      "type": 0,
+      "value": "の倍数である必要があります。"
+    }
+  ],
   "defaults.errors.messages.odd": [
     {
       "type": 1,
@@ -545,6 +713,144 @@
       "value": "はすでに存在します"
     }
   ],
+  "defaults.errors.messages.too_big_array_exact": [
+    {
+      "type": 1,
+      "value": "maximum"
+    },
+    {
+      "type": 0,
+      "value": "個の要素である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.too_big_array_inclusive": [
+    {
+      "type": 1,
+      "value": "maximum"
+    },
+    {
+      "type": 0,
+      "value": "個以下の要素である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.too_big_array_not_inclusive": [
+    {
+      "type": 1,
+      "value": "maximum"
+    },
+    {
+      "type": 0,
+      "value": "個より少ない要素である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.too_big_date_exact": [
+    {
+      "type": 1,
+      "value": "maximum"
+    },
+    {
+      "type": 0,
+      "value": "の日時である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.too_big_date_inclusive": [
+    {
+      "type": 1,
+      "value": "maximum"
+    },
+    {
+      "type": 0,
+      "value": "以前の日時である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.too_big_date_not_inclusive": [
+    {
+      "type": 1,
+      "value": "maximum"
+    },
+    {
+      "type": 0,
+      "value": "よりも前の日時である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.too_big_number_exact": [
+    {
+      "type": 1,
+      "value": "maximum"
+    },
+    {
+      "type": 0,
+      "value": "の数値である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.too_big_number_inclusive": [
+    {
+      "type": 1,
+      "value": "maximum"
+    },
+    {
+      "type": 0,
+      "value": "以下の数値である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.too_big_number_not_inclusive": [
+    {
+      "type": 1,
+      "value": "maximum"
+    },
+    {
+      "type": 0,
+      "value": "より小さな数値である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.too_big_set_exact": [
+    {
+      "type": 0,
+      "value": "入力形式が間違っています。"
+    }
+  ],
+  "defaults.errors.messages.too_big_set_inclusive": [
+    {
+      "type": 0,
+      "value": "入力形式が間違っています。"
+    }
+  ],
+  "defaults.errors.messages.too_big_set_not_inclusive": [
+    {
+      "type": 0,
+      "value": "入力形式が間違っています。"
+    }
+  ],
+  "defaults.errors.messages.too_big_string_exact": [
+    {
+      "type": 1,
+      "value": "maximum"
+    },
+    {
+      "type": 0,
+      "value": "文字の文字列である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.too_big_string_inclusive": [
+    {
+      "type": 1,
+      "value": "maximum"
+    },
+    {
+      "type": 0,
+      "value": "文字以下の文字列である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.too_big_string_not_inclusive": [
+    {
+      "type": 1,
+      "value": "maximum"
+    },
+    {
+      "type": 0,
+      "value": "文字より短い文字列である必要があります。"
+    }
+  ],
   "defaults.errors.messages.too_long": [
     {
       "type": 1,
@@ -579,6 +885,158 @@
     {
       "type": 0,
       "value": "文字以上で入力してください"
+    }
+  ],
+  "defaults.errors.messages.too_small_array_exact": [
+    {
+      "type": 1,
+      "value": "minimum"
+    },
+    {
+      "type": 0,
+      "value": "個の要素が必要です。"
+    }
+  ],
+  "defaults.errors.messages.too_small_array_inclusive": [
+    {
+      "type": 1,
+      "value": "minimum"
+    },
+    {
+      "type": 0,
+      "value": "個以上の要素が必要です。"
+    }
+  ],
+  "defaults.errors.messages.too_small_array_not_inclusive": [
+    {
+      "type": 1,
+      "value": "minimum"
+    },
+    {
+      "type": 0,
+      "value": "個より多くの要素が必要です。"
+    }
+  ],
+  "defaults.errors.messages.too_small_date_exact": [
+    {
+      "type": 1,
+      "value": "minimum"
+    },
+    {
+      "type": 0,
+      "value": "の日時である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.too_small_date_inclusive": [
+    {
+      "type": 1,
+      "value": "minimum"
+    },
+    {
+      "type": 0,
+      "value": "以降の日時である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.too_small_date_not_inclusive": [
+    {
+      "type": 1,
+      "value": "minimum"
+    },
+    {
+      "type": 0,
+      "value": "よりも後の日時である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.too_small_number_exact": [
+    {
+      "type": 1,
+      "value": "minimum"
+    },
+    {
+      "type": 0,
+      "value": "の数値である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.too_small_number_inclusive": [
+    {
+      "type": 1,
+      "value": "minimum"
+    },
+    {
+      "type": 0,
+      "value": "以上の数値である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.too_small_number_not_inclusive": [
+    {
+      "type": 1,
+      "value": "minimum"
+    },
+    {
+      "type": 0,
+      "value": "より大きな数値である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.too_small_set_exact": [
+    {
+      "type": 0,
+      "value": "入力形式が間違っています。"
+    }
+  ],
+  "defaults.errors.messages.too_small_set_inclusive": [
+    {
+      "type": 0,
+      "value": "入力形式が間違っています。"
+    }
+  ],
+  "defaults.errors.messages.too_small_set_not_inclusive": [
+    {
+      "type": 0,
+      "value": "入力形式が間違っています。"
+    }
+  ],
+  "defaults.errors.messages.too_small_string_exact": [
+    {
+      "type": 1,
+      "value": "minimum"
+    },
+    {
+      "type": 0,
+      "value": "文字の文字列である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.too_small_string_inclusive": [
+    {
+      "type": 1,
+      "value": "minimum"
+    },
+    {
+      "type": 0,
+      "value": "文字以上の文字列である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.too_small_string_not_inclusive": [
+    {
+      "type": 1,
+      "value": "minimum"
+    },
+    {
+      "type": 0,
+      "value": "文字より長い文字列である必要があります。"
+    }
+  ],
+  "defaults.errors.messages.unrecognized_keys": [
+    {
+      "type": 0,
+      "value": "オブジェクトのキー"
+    },
+    {
+      "type": 1,
+      "value": "keys"
+    },
+    {
+      "type": 0,
+      "value": "が識別できません。"
     }
   ],
   "defaults.errors.messages.wrong_length": [
@@ -675,6 +1133,168 @@
     {
       "type": 0,
       "value": "個のエラーが発生しました"
+    }
+  ],
+  "defaults.errors.types.array": [
+    {
+      "type": 0,
+      "value": "配列"
+    }
+  ],
+  "defaults.errors.types.bigint": [
+    {
+      "type": 0,
+      "value": "Bigint"
+    }
+  ],
+  "defaults.errors.types.boolean": [
+    {
+      "type": 0,
+      "value": "真偽値"
+    }
+  ],
+  "defaults.errors.types.date": [
+    {
+      "type": 0,
+      "value": "日時"
+    }
+  ],
+  "defaults.errors.types.float": [
+    {
+      "type": 0,
+      "value": "浮動小数点数"
+    }
+  ],
+  "defaults.errors.types.function": [
+    {
+      "type": 0,
+      "value": "関数"
+    }
+  ],
+  "defaults.errors.types.integer": [
+    {
+      "type": 0,
+      "value": "整数"
+    }
+  ],
+  "defaults.errors.types.map": [
+    {
+      "type": 0,
+      "value": "マップ"
+    }
+  ],
+  "defaults.errors.types.nan": [
+    {
+      "type": 0,
+      "value": "NaN"
+    }
+  ],
+  "defaults.errors.types.never": [
+    {
+      "type": 0,
+      "value": "never"
+    }
+  ],
+  "defaults.errors.types.null": [
+    {
+      "type": 0,
+      "value": "NULL"
+    }
+  ],
+  "defaults.errors.types.number": [
+    {
+      "type": 0,
+      "value": "数値"
+    }
+  ],
+  "defaults.errors.types.object": [
+    {
+      "type": 0,
+      "value": "オブジェクト"
+    }
+  ],
+  "defaults.errors.types.promise": [
+    {
+      "type": 0,
+      "value": "Promise"
+    }
+  ],
+  "defaults.errors.types.set": [
+    {
+      "type": 0,
+      "value": "セット"
+    }
+  ],
+  "defaults.errors.types.string": [
+    {
+      "type": 0,
+      "value": "文字列"
+    }
+  ],
+  "defaults.errors.types.symbol": [
+    {
+      "type": 0,
+      "value": "シンボル"
+    }
+  ],
+  "defaults.errors.types.undefined": [
+    {
+      "type": 0,
+      "value": "undefined"
+    }
+  ],
+  "defaults.errors.types.unknown": [
+    {
+      "type": 0,
+      "value": "unknown"
+    }
+  ],
+  "defaults.errors.types.void": [
+    {
+      "type": 0,
+      "value": "void"
+    }
+  ],
+  "defaults.errors.validations.cuid": [
+    {
+      "type": 0,
+      "value": "CUID"
+    }
+  ],
+  "defaults.errors.validations.datetime": [
+    {
+      "type": 0,
+      "value": "日時"
+    }
+  ],
+  "defaults.errors.validations.email": [
+    {
+      "type": 0,
+      "value": "メールアドレス"
+    }
+  ],
+  "defaults.errors.validations.regex": [
+    {
+      "type": 0,
+      "value": "正規表現"
+    }
+  ],
+  "defaults.errors.validations.unknown": [
+    {
+      "type": 0,
+      "value": "不明"
+    }
+  ],
+  "defaults.errors.validations.url": [
+    {
+      "type": 0,
+      "value": "URL"
+    }
+  ],
+  "defaults.errors.validations.uuid": [
+    {
+      "type": 0,
+      "value": "UUID"
     }
   ],
   "defaults.helpers.links.back": [
@@ -801,6 +1421,72 @@
     {
       "type": 0,
       "value": "データがありません"
+    }
+  ],
+  "features.test.components.UserForm.building.label": [
+    {
+      "type": 0,
+      "value": "ビルや建物名"
+    }
+  ],
+  "features.test.components.UserForm.city.label": [
+    {
+      "type": 0,
+      "value": "市町村"
+    }
+  ],
+  "features.test.components.UserForm.container_header": [
+    {
+      "type": 0,
+      "value": "テストフォーム"
+    }
+  ],
+  "features.test.components.UserForm.email.label": [
+    {
+      "type": 0,
+      "value": "メールアドレス"
+    }
+  ],
+  "features.test.components.UserForm.familyName.label": [
+    {
+      "type": 0,
+      "value": "氏"
+    }
+  ],
+  "features.test.components.UserForm.firstName.label": [
+    {
+      "type": 0,
+      "value": "名"
+    }
+  ],
+  "features.test.components.UserForm.form_header": [
+    {
+      "type": 0,
+      "value": "テスト登録"
+    }
+  ],
+  "features.test.components.UserForm.postalCode.label": [
+    {
+      "type": 0,
+      "value": "郵便番号"
+    }
+  ],
+  "features.test.components.UserForm.prefecture.label": [
+    {
+      "type": 0,
+      "value": "都道府県"
+    }
+  ],
+  "features.test.components.UserForm.streetAddress.label": [
+    {
+      "type": 0,
+      "value": "市町村以外"
+    }
+  ],
+  "features.test.components.UserForm.tel.label": [
+    {
+      "type": 0,
+      "value": "TEL"
     }
   ],
   "features.test.components.UserTable.CollectionPreferences.cancelLabel": [
