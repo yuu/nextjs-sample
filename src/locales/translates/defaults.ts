@@ -1,4 +1,4 @@
-import { defineMessages } from "react-intl";
+import { defineMessages, defineMessage } from "react-intl";
 
 const date = defineMessages({
   abbr_day_names_mon: {
@@ -268,7 +268,7 @@ const helpers = defineMessages({
   },
 });
 
-const errors = defineMessages({
+const rails = defineMessages({
   template_body: {
     id: "defaults.errors.template.body",
     defaultMessage: "次の項目を確認してください",
@@ -303,8 +303,7 @@ const errors = defineMessages({
   },
   fatal: {
     id: "defaults.errors.messages.fatal",
-    defaultMessage:
-      "予期せぬエラーが発生しました。システム管理者にお問い合わせください",
+    defaultMessage: "予期せぬエラーが発生しました。システム管理者にお問い合わせください",
   },
   model_invalid: {
     id: "defaults.errors.messages.model_invalid",
@@ -404,10 +403,354 @@ const errors = defineMessages({
   },
 });
 
+const zod_foundamental = defineMessages({
+  invalid_type: {
+    id: "defaults.errors.messages.invalid_type",
+    defaultMessage: "{expected}での入力を期待していますが、{received}が入力されました。",
+  },
+  invalid_type_received_undefined: {
+    id: "defaults.errors.messages.invalid_type_received_undefined",
+    defaultMessage: "必須",
+  },
+  invalid_type_received_null: {
+    id: "defaults.errors.messages.invalid_type_received_null",
+    defaultMessage: "必須",
+  },
+  invalid_literal: {
+    id: "defaults.errors.messages.invalid_literal",
+    defaultMessage: "無効なリテラル値です。{expected}を入力してください。",
+  },
+  invalid_union: {
+    id: "defaults.errors.messages.invalid_union",
+    defaultMessage: "入力形式が間違っています。",
+  },
+  invalid_union_discriminator: {
+    id: "defaults.errors.messages.invalid_union_discriminator",
+    defaultMessage: "無効な識別子です。{options}で入力してください。",
+  },
+  invalid_enum_value: {
+    id: "defaults.errors.messages.invalid_enum_value",
+    defaultMessage: "'{received}'は無効な値です。{options}で入力してください。",
+  },
+  unrecognized_keys: {
+    id: "defaults.errors.messages.unrecognized_keys",
+    defaultMessage: "オブジェクトのキー{keys}が識別できません。",
+  },
+  invalid_arguments: {
+    id: "defaults.errors.messages.invalid_arguments",
+    defaultMessage: "引数が間違っています。",
+  },
+  invalid_return_type: {
+    id: "defaults.errors.messages.invalid_return_type",
+    defaultMessage: "返値の型が間違っています。",
+  },
+  invalid_date: {
+    id: "defaults.errors.messages.invalid_date",
+    defaultMessage: "間違った日時データです。",
+  },
+  invalid_string_startsWith: {
+    id: "defaults.errors.messages.invalid_string.startsWith",
+    defaultMessage: '"{startsWith}"で始まる文字列である必要があります。',
+  },
+  invalid_string_endsWith: {
+    id: "defaults.errors.messages.invalid_string.endsWith",
+    defaultMessage: '"{endsWith}"で終わる文字列である必要があります。',
+  },
+  invalid_string_any: {
+    id: "defaults.errors.messages.invalid_string.any",
+    defaultMessage: "{validation}の形式で入力してください。",
+  },
+  invalid_string_regex: {
+    id: "defaults.errors.messages.invalid_string.regex",
+    defaultMessage: "入力形式が間違っています。",
+  },
+  custom: {
+    id: "defaults.errors.messages.custom",
+    defaultMessage: "入力形式が間違っています。",
+  },
+  invalid_intersection_types: {
+    id: "defaults.errors.messages.invalid_intersection_types",
+    defaultMessage: "交差型のマージができませんでした。",
+  },
+  not_multiple_of: {
+    id: "defaults.errors.messages.not_multiple_of",
+    defaultMessage: "{multipleOf}の倍数である必要があります。",
+  },
+  not_finite: {
+    id: "defaults.errors.messages.not_finite",
+    defaultMessage: "有限数である必要があります。",
+  },
+});
+
+const zod_nested = {
+  validations: defineMessages({
+    email: {
+      id: "defaults.errors.validations.email",
+      defaultMessage: "メールアドレス",
+    },
+    url: {
+      id: "defaults.errors.validations.url",
+      defaultMessage: "URL",
+    },
+    uuid: {
+      id: "defaults.errors.validations.uuid",
+      defaultMessage: "UUID",
+    },
+    cuid: {
+      id: "defaults.errors.validations.cuid",
+      defaultMessage: "CUID",
+    },
+    regex: {
+      id: "defaults.errors.validations.regex",
+      defaultMessage: "正規表現",
+    },
+    datetime: {
+      id: "defaults.errors.validations.datetime",
+      defaultMessage: "日時",
+    },
+    unknown: {
+      id: "defaults.errors.validations.unknown",
+      defaultMessage: "不明",
+    },
+  }),
+  types: defineMessages({
+    function: {
+      id: "defaults.errors.types.function",
+      defaultMessage: "関数",
+    },
+    number: {
+      id: "defaults.errors.types.number",
+      defaultMessage: "数値",
+    },
+    string: {
+      id: "defaults.errors.types.string",
+      defaultMessage: "文字列",
+    },
+    nan: {
+      id: "defaults.errors.types.nan",
+      defaultMessage: "NaN",
+    },
+    integer: {
+      id: "defaults.errors.types.integer",
+      defaultMessage: "整数",
+    },
+    float: {
+      id: "defaults.errors.types.float",
+      defaultMessage: "浮動小数点数",
+    },
+    boolean: {
+      id: "defaults.errors.types.boolean",
+      defaultMessage: "真偽値",
+    },
+    date: {
+      id: "defaults.errors.types.date",
+      defaultMessage: "日時",
+    },
+    bigint: {
+      id: "defaults.errors.types.bigint",
+      defaultMessage: "Bigint",
+    },
+    undefined: {
+      id: "defaults.errors.types.undefined",
+      defaultMessage: "undefined",
+    },
+    symbol: {
+      id: "defaults.errors.types.symbol",
+      defaultMessage: "シンボル",
+    },
+    null: {
+      id: "defaults.errors.types.null",
+      defaultMessage: "NULL",
+    },
+    array: {
+      id: "defaults.errors.types.array",
+      defaultMessage: "配列",
+    },
+    object: {
+      id: "defaults.errors.types.object",
+      defaultMessage: "オブジェクト",
+    },
+    unknown: {
+      id: "defaults.errors.types.unknown",
+      defaultMessage: "unknown",
+    },
+    promise: {
+      id: "defaults.errors.types.promise",
+      defaultMessage: "Promise",
+    },
+    void: {
+      id: "defaults.errors.types.void",
+      defaultMessage: "void",
+    },
+    never: {
+      id: "defaults.errors.types.never",
+      defaultMessage: "never",
+    },
+    map: {
+      id: "defaults.errors.types.map",
+      defaultMessage: "マップ",
+    },
+    set: {
+      id: "defaults.errors.types.set",
+      defaultMessage: "セット",
+    },
+  }),
+  too_small: {
+    array: {
+      exact: defineMessage({
+        id: "defaults.errors.messages.too_small_array_exact",
+        defaultMessage: "{minimum}個の要素が必要です。",
+      }),
+      inclusive: defineMessage({
+        id: "defaults.errors.messages.too_small_array_inclusive",
+        defaultMessage: "{minimum}個以上の要素が必要です。",
+      }),
+      not_inclusive: defineMessage({
+        id: "defaults.errors.messages.too_small_array_not_inclusive",
+        defaultMessage: "{minimum}個より多くの要素が必要です。",
+      }),
+    },
+    string: {
+      exact: defineMessage({
+        id: "defaults.errors.messages.too_small_string_exact",
+        defaultMessage: "{minimum}文字の文字列である必要があります。",
+      }),
+      inclusive: defineMessage({
+        id: "defaults.errors.messages.too_small_string_inclusive",
+        defaultMessage: "{minimum}文字以上の文字列である必要があります。",
+      }),
+      not_inclusive: defineMessage({
+        id: "defaults.errors.messages.too_small_string_not_inclusive",
+        defaultMessage: "{minimum}文字より長い文字列である必要があります。",
+      }),
+    },
+    number: {
+      exact: defineMessage({
+        id: "defaults.errors.messages.too_small_number_exact",
+        defaultMessage: "{minimum}の数値である必要があります。",
+      }),
+      inclusive: defineMessage({
+        id: "defaults.errors.messages.too_small_number_inclusive",
+        defaultMessage: "{minimum}以上の数値である必要があります。",
+      }),
+      not_inclusive: defineMessage({
+        id: "defaults.errors.messages.too_small_number_not_inclusive",
+        defaultMessage: "{minimum}より大きな数値である必要があります。",
+      }),
+    },
+    set: {
+      exact: defineMessage({
+        id: "defaults.errors.messages.too_small_set_exact",
+        defaultMessage: "入力形式が間違っています。",
+      }),
+      inclusive: defineMessage({
+        id: "defaults.errors.messages.too_small_set_inclusive",
+        defaultMessage: "入力形式が間違っています。",
+      }),
+      not_inclusive: defineMessage({
+        id: "defaults.errors.messages.too_small_set_not_inclusive",
+        defaultMessage: "入力形式が間違っています。",
+      }),
+    },
+    date: {
+      exact: defineMessage({
+        id: "defaults.errors.messages.too_small_date_exact",
+        defaultMessage: "{minimum}の日時である必要があります。",
+      }),
+      inclusive: defineMessage({
+        id: "defaults.errors.messages.too_small_date_inclusive",
+        defaultMessage: "{minimum}以降の日時である必要があります。",
+      }),
+      not_inclusive: defineMessage({
+        id: "defaults.errors.messages.too_small_date_not_inclusive",
+        defaultMessage: "{minimum}よりも後の日時である必要があります。",
+      }),
+    },
+  },
+  too_big: {
+    array: {
+      exact: defineMessage({
+        id: "defaults.errors.messages.too_big_array_exact",
+        defaultMessage: "{maximum}個の要素である必要があります。",
+      }),
+      inclusive: defineMessage({
+        id: "defaults.errors.messages.too_big_array_inclusive",
+        defaultMessage: "{maximum}個以下の要素である必要があります。",
+      }),
+      not_inclusive: defineMessage({
+        id: "defaults.errors.messages.too_big_array_not_inclusive",
+        defaultMessage: "{maximum}個より少ない要素である必要があります。",
+      }),
+    },
+    string: {
+      exact: defineMessage({
+        id: "defaults.errors.messages.too_big_string_exact",
+        defaultMessage: "{maximum}文字の文字列である必要があります。",
+      }),
+      inclusive: defineMessage({
+        id: "defaults.errors.messages.too_big_string_inclusive",
+        defaultMessage: "{maximum}文字以下の文字列である必要があります。",
+      }),
+      not_inclusive: defineMessage({
+        id: "defaults.errors.messages.too_big_string_not_inclusive",
+        defaultMessage: "{maximum}文字より短い文字列である必要があります。",
+      }),
+    },
+    number: {
+      exact: defineMessage({
+        id: "defaults.errors.messages.too_big_number_exact",
+        defaultMessage: "{maximum}の数値である必要があります。",
+      }),
+      inclusive: defineMessage({
+        id: "defaults.errors.messages.too_big_number_inclusive",
+        defaultMessage: "{maximum}以下の数値である必要があります。",
+      }),
+      not_inclusive: defineMessage({
+        id: "defaults.errors.messages.too_big_number_not_inclusive",
+        defaultMessage: "{maximum}より小さな数値である必要があります。",
+      }),
+    },
+    set: {
+      exact: defineMessage({
+        id: "defaults.errors.messages.too_big_set_exact",
+        defaultMessage: "入力形式が間違っています。",
+      }),
+      inclusive: defineMessage({
+        id: "defaults.errors.messages.too_big_set_inclusive",
+        defaultMessage: "入力形式が間違っています。",
+      }),
+      not_inclusive: defineMessage({
+        id: "defaults.errors.messages.too_big_set_not_inclusive",
+        defaultMessage: "入力形式が間違っています。",
+      }),
+    },
+    date: {
+      exact: defineMessage({
+        id: "defaults.errors.messages.too_big_date_exact",
+        defaultMessage: "{maximum}の日時である必要があります。",
+      }),
+      inclusive: defineMessage({
+        id: "defaults.errors.messages.too_big_date_inclusive",
+        defaultMessage: "{maximum}以前の日時である必要があります。",
+      }),
+      not_inclusive: defineMessage({
+        id: "defaults.errors.messages.too_big_date_not_inclusive",
+        defaultMessage: "{maximum}よりも前の日時である必要があります。",
+      }),
+    },
+  },
+};
+
 export const defaults = {
   date,
   datetime,
   number,
   helpers,
-  errors,
+  errors: {
+    ...rails,
+    zod: {
+      ...zod_foundamental,
+      ...zod_nested,
+    },
+  },
 };
