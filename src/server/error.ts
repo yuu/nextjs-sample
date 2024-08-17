@@ -3,7 +3,7 @@ import { snakeCase, camelCase } from "lodash-es";
 import { Prisma } from "@prisma/client";
 import { TRPCError } from "@trpc/server";
 import { ZodError } from "zod";
-import { APP_ERROR_CODES_BY_KEY } from "@/type/error";
+import { AppError, APP_ERROR_CODES_BY_KEY } from "@/type/error";
 import {
   AppErrorResponse,
   AppErrorResponseWithRecordInvalid,
@@ -126,6 +126,11 @@ export const formatTRPCError = ({ error }: formatTRPCErrorParams) =>
     )
     .with(P.instanceOf(Prisma.PrismaClientValidationError), (e) => ({
       code: APP_ERROR_CODES_BY_KEY["INTERNAL_SERVER_ERROR"],
+      message: e.message,
+      data: {},
+    }))
+    .with(P.instanceOf(AppError), (e) => ({
+      code: APP_ERROR_CODES_BY_KEY[e.code],
       message: e.message,
       data: {},
     }))

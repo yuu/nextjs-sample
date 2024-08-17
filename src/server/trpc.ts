@@ -24,14 +24,17 @@ export const middleware = t.middleware;
 const procedure = t.procedure;
 
 const authMiddleware = middleware(async (opts) => {
-  const { meta, next } = opts;
+  const { meta, ctx, next } = opts;
 
-  // check auth and role
-  if (meta?.authRequired) {
+  if (meta?.authRequired && ctx.session === null) {
     throw new AppError({ code: "UNAUTHORIZED" });
   }
 
-  return next();
+  return next({
+    ctx: {
+      session: ctx.session,
+    },
+  });
 });
 
 export const publicProcedure = procedure.use(authMiddleware);

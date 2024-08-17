@@ -1,13 +1,13 @@
 import {
   router,
-  publicProcedure,
+  privateProcedure,
   toListResponse,
   toSingleResponse,
 } from "@/server/trpc";
 import { prisma } from "@/server/prisma";
 import { TestCreateInputSchema, paginationInputSchema } from "@/schema";
 
-const list = publicProcedure
+const list = privateProcedure
   .input(paginationInputSchema)
   .query(async (opts) => {
     const { input } = opts;
@@ -16,7 +16,7 @@ const list = publicProcedure
     return toListResponse(result);
   });
 
-export const create = publicProcedure
+export const create = privateProcedure
   .input(TestCreateInputSchema)
   .mutation(async (opts) => {
     const { input } = opts;
