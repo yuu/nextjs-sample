@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import NProgress from "nprogress";
 
+NProgress.configure({ showSpinner: false });
+
 const handleStart = () => {
   NProgress.start();
 };
