@@ -1,5 +1,5 @@
 export const isRecordOfStringArrays = (
-  obj: unknown,
+  obj: unknown
 ): obj is Record<string, Array<string>> => {
   if (typeof obj === "object" && obj !== null && !Array.isArray(obj)) {
     const firstKey = Object.keys(obj)[0];
