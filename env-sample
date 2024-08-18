@@ -10,5 +10,3 @@ NEXTAUTH_URL=http://localhost:3000
 # https://next-auth.js.org/errors#jwt_session_error
 # npm install -g node-jose-tools && jose newkey -s 512 -t oct -a HS512
 NEXTAUTH_SECRET='{"kty":"oct","kid":"EVHW85W4xBBCHGg-26uwdM3p8SWXr0Y51lAXNzlTljQ","alg":"HS512","k":"a_5mqTSmXQoWYcBajU1Uw9cGCDabtA6zPEqf1JttvuN8mYIDydNnQgXS3usVmxsDUL9NQuu1FDLb61vfVdXdAg"}'
-
-DEBUG="prisma*"

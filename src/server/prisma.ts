@@ -1,4 +1,11 @@
-import { PrismaClient } from "@prisma/client";
+import { Prisma, PrismaClient } from "@prisma/client";
 import extension from "prisma-paginate";
 
-export const prisma = new PrismaClient().$extends(extension);
+const log: Array<Prisma.LogLevel> =
+  process.env.NODE_ENV === "development"
+    ? ["query", "error", "warn"]
+    : ["error"];
+
+export const prisma = new PrismaClient({
+  log: log,
+}).$extends(extension);
