@@ -22,11 +22,11 @@ const useAction = () => {
     f();
   };
 
-  return { onItemClick };
+  return { onItemClick, email: auth.session?.user?.email };
 };
 
 export const DefaultLayout = ({ content }: DefaultLayoutProps) => {
-  const { onItemClick } = useAction();
+  const { onItemClick, email } = useAction();
 
   return (
     <>
@@ -36,7 +36,7 @@ export const DefaultLayout = ({ content }: DefaultLayoutProps) => {
       >
         <TopNavigation
           identity={identity()}
-          utilities={utilities({ onItemClick })}
+          utilities={utilities({ email, onItemClick })}
         />
       </div>
       <AppLayout

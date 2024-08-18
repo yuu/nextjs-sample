@@ -34,16 +34,18 @@ type UtilitiesParams = {
   onItemClick: (
     event: CustomEvent<ButtonDropdownProps.ItemClickDetails>
   ) => void;
+  email?: string;
 };
 
 export const utilities = ({
   onItemClick,
+  email = " ",
 }: UtilitiesParams): Array<TopNavigationProps.Utility> => {
   return [
     {
       type: "menu-dropdown",
       text: " ",
-      description: " ",
+      description: email,
       iconName: "user-profile",
       items: [{ id: "signout", text: "ログアウト" }],
       onItemClick: onItemClick,
