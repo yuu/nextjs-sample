@@ -1,12 +1,10 @@
 import React from "react";
 import type { AppProps } from "next/app";
-import { AppLayout } from "@cloudscape-design/components";
-import { Navigation } from "@/components/navigation";
-import { Guard } from "@/components/guard";
-import { navigationItems } from "@/config/navigation";
 import { useProgressBar } from "@/hooks";
 import { I18nProvider, AuthProvider } from "@/providers";
 import { trpc } from "@/api";
+import { Guard } from "@/components/guard";
+import { DefaultLayout } from "@/layout";
 
 import "@cloudscape-design/global-styles/index.css";
 import "nprogress/nprogress.css";
@@ -25,13 +23,7 @@ function App({ Component, pageProps }: AppProps) {
 
   const { authGuard } = getPageAttributes(Component);
   const getLayout =
-    Component.getLayout ??
-    ((page) => (
-      <AppLayout
-        navigation={<Navigation items={navigationItems()} />}
-        content={page}
-      />
-    ));
+    Component.getLayout ?? ((page) => <DefaultLayout content={page} />);
 
   return (
     <I18nProvider>
