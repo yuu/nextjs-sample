@@ -12,6 +12,9 @@
     "i18n:compile": "formatjs compile-folder src/locales/extract src/locales/compiled --format simple --ast"
   },
   "dependencies": {
+    "@casl/ability": "^6.7.1",
+    "@casl/prisma": "^1.4.1",
+    "@casl/react": "^4.0.0",
     "@cloudscape-design/components": "^3.0.709",
     "@cloudscape-design/global-styles": "^1.0.32",
     "@hookform/resolvers": "^3.9.0",
