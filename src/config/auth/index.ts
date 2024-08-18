@@ -17,6 +17,7 @@ export const options = (): ResultAsync<AuthOptions, Error> => {
         updateAge: 24 * 60 * 60, // 24 hours
         generateSessionToken: () => randomUUID(),
       },
+      useSecureCookies: process.env.NODE_ENV === "production",
       providers: opt.providers,
       callbacks: opt.callback,
     } satisfies AuthOptions;
