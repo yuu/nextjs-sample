@@ -1,2 +1,2 @@
-export * from './UserTable'
-export * from './usePreferences'
+export * from "./UserTable";
+export * from "./usePreferences";

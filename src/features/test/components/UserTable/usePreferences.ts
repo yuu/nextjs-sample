@@ -32,7 +32,7 @@ export const usePreferences = () => {
   const onChangePagination = useCallback(
     ({ detail }: ChangePaginationParam) =>
       setCurrentPageIndex(detail.currentPageIndex),
-    [setCurrentPageIndex],
+    [setCurrentPageIndex]
   );
 
   // -- Preferences
@@ -49,7 +49,7 @@ export const usePreferences = () => {
     });
   const onChangePreferences = useCallback(
     ({ detail }: ChangePreferencesParam) => setPreferences(detail),
-    [setPreferences],
+    [setPreferences]
   );
 
   // -- Selection
@@ -57,7 +57,7 @@ export const usePreferences = () => {
   const onSelectionChange = useCallback(
     ({ detail }: ChangeSelectionParam) =>
       setSelectedItems(detail.selectedItems),
-    [setSelectedItems],
+    [setSelectedItems]
   );
 
   // -- Sorting
@@ -76,7 +76,7 @@ export const usePreferences = () => {
         isDescending: detail.isDescending ?? false,
         ...detail.sortingColumn,
       }),
-    [setSortingColumn],
+    [setSortingColumn]
   );
 
   return {

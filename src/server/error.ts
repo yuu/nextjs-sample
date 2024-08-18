@@ -39,12 +39,12 @@ const parsePrismaErrorCode = (error: Prisma.PrismaClientKnownRequestError) =>
 
                     return acc;
                   },
-                  {} as AppErrorResponseWithRecordInvalid["data"]["details"],
-                ),
+                  {} as AppErrorResponseWithRecordInvalid["data"]["details"]
+                )
               )
               .otherwise(() => ({})),
           },
-        }) satisfies AppErrorResponseWithRecordInvalid,
+        }) satisfies AppErrorResponseWithRecordInvalid
     )
     .otherwise((e) => ({
       code: APP_ERROR_CODES_BY_KEY["INTERNAL_SERVER_ERROR"],
@@ -57,7 +57,7 @@ const parsePrismaErrorCode = (error: Prisma.PrismaClientKnownRequestError) =>
 
 // TODO: error handling
 const parsePrismaInitErrorCode = (
-  error: Prisma.PrismaClientInitializationError,
+  error: Prisma.PrismaClientInitializationError
 ) =>
   match(error).otherwise((e) => ({
     code: APP_ERROR_CODES_BY_KEY["INTERNAL_SERVER_ERROR"],
@@ -97,7 +97,7 @@ export const formatTRPCError = ({ error }: formatTRPCErrorParams) =>
           acc[key].push(snakeCase(error.message));
           return acc;
         },
-        {},
+        {}
       );
 
       return {
@@ -109,7 +109,7 @@ export const formatTRPCError = ({ error }: formatTRPCErrorParams) =>
       };
     })
     .with(P.instanceOf(Prisma.PrismaClientKnownRequestError), (e) =>
-      parsePrismaErrorCode(e),
+      parsePrismaErrorCode(e)
     )
     .with(P.instanceOf(Prisma.PrismaClientUnknownRequestError), (e) => ({
       code: APP_ERROR_CODES_BY_KEY["INTERNAL_SERVER_ERROR"],
@@ -122,7 +122,7 @@ export const formatTRPCError = ({ error }: formatTRPCErrorParams) =>
       data: {},
     }))
     .with(P.instanceOf(Prisma.PrismaClientInitializationError), (e) =>
-      parsePrismaInitErrorCode(e),
+      parsePrismaInitErrorCode(e)
     )
     .with(P.instanceOf(Prisma.PrismaClientValidationError), (e) => ({
       code: APP_ERROR_CODES_BY_KEY["INTERNAL_SERVER_ERROR"],

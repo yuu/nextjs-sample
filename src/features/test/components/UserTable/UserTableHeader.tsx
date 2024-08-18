@@ -91,7 +91,7 @@ const UserTableHeaderInner = ({
                   text: intl.formatMessage(message.danger_delete_text),
                   disabled: true,
                   disabledReason: intl.formatMessage(
-                    message.danger_delete_disabledReason,
+                    message.danger_delete_disabledReason
                   ),
                 },
               ],

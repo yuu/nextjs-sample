@@ -178,5 +178,5 @@ export const contentDisplayPreferenceOptions = columnDefinitions.map(
   ({ id, header }) => ({
     id: `${id}`,
     label: header as string,
-  }),
+  })
 );
