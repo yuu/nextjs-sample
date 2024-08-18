@@ -11,7 +11,7 @@ export type AuthContext = {
   session: Session | null;
   signup: () => Promise<void>;
   signin: () => Promise<void>;
-  logout: () => Promise<void>;
+  signout: () => Promise<void>;
 };
 
 const authContext = createContext<AuthContext>(undefined!);

@@ -12,7 +12,7 @@ const NextAuthProviderImpl = ({ children }: PropsWithChildren<{}>) => {
     session: session,
     signup: () => Promise.reject(),
     signin: () => signIn(),
-    logout: () => signOut(),
+    signout: () => signOut(),
   } satisfies AuthContext;
 
   return (
