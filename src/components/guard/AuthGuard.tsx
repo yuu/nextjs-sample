@@ -19,7 +19,7 @@ const isFallback = (auth: AuthContext): boolean =>
     .with(["loading", P.not(P.nullish)], () => true)
     .with(["authenticated", P.nullish], () => false)
     .with(["authenticated", P.not(P.nullish)], () => false)
-    .with(["unauthenticated", P.nullish], () => false)
+    .with(["unauthenticated", P.nullish], () => true) // When fallback, redirect to sign-in page
     .with(["unauthenticated", P.not(P.nullish)], () => false)
     .exhaustive();
 
