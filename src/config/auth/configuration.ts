@@ -35,7 +35,11 @@ export const getOptions = (): ResultAsync<
       async jwt({ token }) {
         return token;
       },
-      async session({ session }) {
+      async session({ session, token }) {
+        // TODO: adapter 経由で ログイン時に prisma から取得するできるはず
+        session.user.role = "admin";
+        session.user.email = token.email;
+
         return session;
       },
     },

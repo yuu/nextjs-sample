@@ -5,6 +5,7 @@ import type {
   AppPropsType,
 } from "next/dist/shared/lib/utils";
 import type { Router } from "next/dist/client/router";
+import type { AclPolicy } from "@/type/acl";
 
 declare module "next" {
   export declare type NextPage<
@@ -13,6 +14,7 @@ declare module "next" {
   > = NextComponentType<NextPageContext, IP, P> & {
     authGuard?: boolean;
     guestGuard?: boolean;
+    aclPolicy?: AclPolicy;
     getLayout?: (page: ReactNode) => ReactNode;
   };
 }

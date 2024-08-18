@@ -86,6 +86,7 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async (
 };
 
 SignInPage.authGuard = false;
+SignInPage.guestGuard = true;
 SignInPage.getLayout = (page) => page;
 
 export default SignInPage;

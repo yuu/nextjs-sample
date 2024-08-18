@@ -1,8 +1,9 @@
 import type { Session } from "next-auth";
+import { type Role } from "@/type/role";
 
 export type Meta = {
   authRequired: boolean;
-  role: "general" | "admin";
+  role: Role;
 };
 
 export type Context = {

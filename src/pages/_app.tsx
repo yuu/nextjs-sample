@@ -1,7 +1,7 @@
 import React from "react";
 import type { AppProps } from "next/app";
 import { useProgressBar } from "@/hooks";
-import { I18nProvider, AuthProvider } from "@/providers";
+import { I18nProvider, AuthProvider, AclProvider } from "@/providers";
 import { trpc } from "@/api";
 import { Guard } from "@/components/guard";
 import { DefaultLayout } from "@/layout";
@@ -16,21 +16,24 @@ if (!typeof window) React.useLayoutEffect = React.useEffect;
 const getPageAttributes = (Component: AppProps["Component"]) => ({
   authGuard: Component.authGuard ?? true,
   guestGuard: Component.guestGuard ?? false,
+  aclPolicy: Component.aclPolicy ?? { action: "manage", subject: "all" },
 });
 
 function App({ Component, pageProps }: AppProps) {
   useProgressBar();
 
-  const { authGuard } = getPageAttributes(Component);
+  const { authGuard, guestGuard, aclPolicy } = getPageAttributes(Component);
   const getLayout =
     Component.getLayout ?? ((page) => <DefaultLayout content={page} />);
 
   return (
     <I18nProvider>
       <AuthProvider>
-        <Guard authGuard={authGuard}>
-          {getLayout(<Component {...pageProps} />)}
-        </Guard>
+        <AclProvider>
+          <Guard authGuard={authGuard} guestGuard={guestGuard} acl={aclPolicy}>
+            {getLayout(<Component {...pageProps} />)}
+          </Guard>
+        </AclProvider>
       </AuthProvider>
     </I18nProvider>
   );
