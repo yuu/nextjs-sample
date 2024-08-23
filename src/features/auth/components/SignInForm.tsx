@@ -20,7 +20,8 @@ type FData = {
 };
 
 type SignInFormProps<Data = FData> = {
-  credentialProvider?: ClientSafeProvider;
+  credentialProvider: ClientSafeProvider | null;
+  emailProvider: ClientSafeProvider | null;
   idpProviders: Array<ClientSafeProvider>;
   initialValue?: Data;
   error?: string;

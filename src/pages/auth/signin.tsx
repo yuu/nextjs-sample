@@ -7,12 +7,14 @@ import { options } from "@/config/auth";
 import { SignInForm } from "@/features/auth";
 
 type PageProps = {
-  credentialProvider?: ClientSafeProvider;
+  credentialProvider: ClientSafeProvider | null;
+  emailProvider: ClientSafeProvider | null;
   idpProviders: Array<ClientSafeProvider>;
 };
 
 const SignInPage: NextPage<PageProps> = ({
   credentialProvider,
+  emailProvider,
   idpProviders,
 }) => {
   const {
@@ -24,6 +26,7 @@ const SignInPage: NextPage<PageProps> = ({
   return (
     <SignInForm
       credentialProvider={credentialProvider}
+      emailProvider={emailProvider}
       idpProviders={idpProviders}
       initialValue={{
         email: "",
@@ -44,7 +47,11 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async (
     // TODO: internal server error
     return {
       redirect: { destination: "/" },
-      props: { idpProviders: [] },
+      props: {
+        credentialProvider: null,
+        emailProvider: null,
+        idpProviders: [],
+      },
     };
   }
 
@@ -57,7 +64,11 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async (
   if (session) {
     return {
       redirect: { destination: "/" },
-      props: { idpProviders: [] },
+      props: {
+        credentialProvider: null,
+        emailProvider: null,
+        idpProviders: [],
+      },
     };
   }
 
@@ -66,13 +77,22 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async (
     // TODO: internal server error
     return {
       redirect: { destination: "/" },
-      props: { idpProviders: [] },
+      props: {
+        credentialProvider: null,
+        emailProvider: null,
+        idpProviders: [],
+      },
     };
   }
 
-  const credentialProvider = Object.values(providers).filter(
-    (p) => p.type === "credentials"
-  )[0];
+  const credentialProvider =
+    Object.values(providers)
+      .filter((p) => p.type === "credentials")
+      ?.shift() ?? null;
+  const emailProvider =
+    Object.values(providers)
+      .filter((p) => p.type === "email")
+      ?.shift() ?? null;
   const idpProviders = Object.values(providers).filter(
     (p) => p.type === "oauth"
   );
@@ -80,6 +100,7 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async (
   return {
     props: {
       credentialProvider,
+      emailProvider,
       idpProviders,
     },
   };
