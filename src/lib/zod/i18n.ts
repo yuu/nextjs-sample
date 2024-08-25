@@ -105,7 +105,8 @@ export function getDescriptorItem<T>(
       });
     })
     .with({ code: ZodIssueCode.too_small }, (issue) => {
-      const minimum = issue.type === "date" ? new Date(issue.minimum as number) : issue.minimum;
+      const minimum =
+        issue.type === "date" ? new Date(issue.minimum as number).toString() : issue.minimum;
       const typev = match(issue.type)
         .returnType<"array" | "string" | "number" | "set" | "date">()
         .with("array", (v) => v)
@@ -122,12 +123,13 @@ export function getDescriptorItem<T>(
         .otherwise(() => "not_inclusive");
 
       return intl.formatMessage(messages.too_small[typev][exact], {
-        minimum,
+        minimum: minimum.toString(),
         count: typeof minimum === "number" ? minimum : undefined, // plural
       });
     })
     .with({ code: ZodIssueCode.too_big }, (issue) => {
-      const maximum = issue.type === "date" ? new Date(issue.maximum as number) : issue.maximum;
+      const maximum =
+        issue.type === "date" ? new Date(issue.maximum as number).toString() : issue.maximum;
       const typev = match(issue.type)
         .returnType<"array" | "string" | "number" | "set" | "date">()
         .with("array", (v) => v)
@@ -144,7 +146,7 @@ export function getDescriptorItem<T>(
         .otherwise(() => "not_inclusive");
 
       return intl.formatMessage(messages.too_big[typev][exact], {
-        maximum, // required l10n
+        maximum: maximum.toString(), // required l10n
         count: typeof maximum === "number" ? maximum : undefined,
       });
     })

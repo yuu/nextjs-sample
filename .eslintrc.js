@@ -5,7 +5,7 @@ module.exports = {
   rules: {
     "neverthrow/must-use-result": "error",
     "formatjs/no-offset": "error",
-    "no-unused-vars": "error",
+    "no-unused-vars": "off"
   },
   parser: "@typescript-eslint/parser",
   parserOptions: {

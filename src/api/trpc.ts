@@ -29,7 +29,7 @@ function getBaseUrl() {
 }
 
 export const trpc = createTRPCNext<AppRouter>({
-  config(opts) {
+  config() {
     return {
       transformer: superjson,
       abortOnUnmount: true,

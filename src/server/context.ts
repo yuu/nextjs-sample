@@ -3,14 +3,10 @@ import { getServerSession } from "next-auth/next";
 import { options } from "@/config/auth";
 
 export const createContext = async ({ req, res }: CreateNextContextOptions) => {
-  const authOptions = await options();
-  if (authOptions.isErr()) {
-    // TODO: internal server error
-  }
-
-  const session = await getServerSession(req, res, authOptions.unwrapOr({}));
-
-  return {
-    session,
-  };
+  return await options()
+    .map((authOption) => getServerSession(req, res, authOption))
+    .match(
+      (session) => ({ session }),
+      () => ({ session: null })
+    );
 };
