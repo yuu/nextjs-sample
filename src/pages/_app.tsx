@@ -11,7 +11,7 @@ import "nprogress/nprogress.css";
 
 // Suppress warning for ssr useLayoutEffect
 // https://gist.github.com/gaearon/e7d97cdf38a2907924ea12e4ebdf3c85
-if (!typeof window) React.useLayoutEffect = React.useEffect;
+if (typeof window === "undefined") React.useLayoutEffect = () => {};
 
 const getPageAttributes = (Component: AppProps["Component"]) => ({
   authGuard: Component.authGuard ?? true,

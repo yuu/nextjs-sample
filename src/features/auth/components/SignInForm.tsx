@@ -77,7 +77,7 @@ export const SignInForm = ({
                 name="providerId"
                 control={control}
                 render={({ field: { value } }) => (
-                  <input value={value} style={{ display: "none" }} />
+                  <input defaultValue={value} style={{ display: "none" }} />
                 )}
               />
 
@@ -85,7 +85,7 @@ export const SignInForm = ({
                 name="callbackUrl"
                 control={control}
                 render={({ field: { value } }) => (
-                  <input value={value} style={{ display: "none" }} />
+                  <input defaultValue={value} style={{ display: "none" }} />
                 )}
               />
 
