@@ -1,5 +1,11 @@
+import makePWA from "next-pwa";
+
+const withPWA = makePWA({
+  dest: "public",
+});
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig = withPWA({
   reactStrictMode: true,
   transpilePackages: [
     "@cloudscape-design/components",
@@ -18,6 +24,6 @@ const nextConfig = {
 
     return config;
   },
-};
+});
 
 export default nextConfig;
